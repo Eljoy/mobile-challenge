@@ -16,26 +16,26 @@ We're hoping the app will end up with all the "Must have"-requirements and a few
 - Expenses on the expense list are fetched gradually by using pagination
 
 ## General requirements
-_Componentize your code:_ Split your code into small building blocks, showcase your software architecture skills. We're looking for clean, maintainable and reusable code.
+_**Componentize your code:**_ Split your code into small building blocks, showcase your software architecture skills. We're looking for clean, maintainable and reusable code.
 
-_A visually pleasing experience:_ You don’t have to be a designer but you must have put an effort into making this look good. Show you pride in craftmanship and feel free to be creative :)
+_**A visually pleasing experience:**_ You don’t have to be a designer but you must have put an effort into making this look good. Show you pride in craftmanship and feel free to be creative :)
 
-_Add a brief project description:_ Tell us a bit about your project, such as:
+_**Add a brief project description:**_ Tell us a bit about your project, such as:
 - Why you took a specific approach.
 - How long did it take? 
 - Which part was the hardest to implement? 
 - What functionalities are you most proud of?
 
-_Use libraies if needed:_ You can use libraries or frameworks as long as you explain why you chose a specific library. Also, we encourage you to write at least some your own code, this is afterall your time to shine :)
+_**Use libraies if needed:**_ You can use libraries or frameworks as long as you explain why you chose a specific library. Also, we encourage you to write at least some your own code, this is afterall your time to shine :)
 
-_Git history:_ Show us you work progress through your commit history
+_**Git history:**_ Show us you work progress through your commit history
 
 ## Starting point
 In this repo we're provided you with a node server, that you can use get expenses and update their details. See the [API details](https://github.com/pleo-io/mobile-challenge/tree/master/api) for implementation.
 
 In the Pleo Mobile app we use TypeScript and [react-native-navigation](https://github.com/wix/react-native-navigation). We've initialized an almost empty React Native project, with the basic project scaffolding. Feel free to change any of this if you prefer, just mention why you chose to do so in the project description.
 
-We've also added a few styling contants that we use in Pleo (see [`/style`](https://github.com/pleo-io/mobile-challenge/tree/master/style)), to help you get a bit closer to the styling we use in our app.
+We've also added a few styling contants that we use in Pleo (see [`/style`](https://github.com/pleo-io/mobile-challenge/tree/master/ExpenseFeed/style)), to help you get a bit closer to the styling we use in our app.
 
 ## Want to go the extra mile?
 Here's few suggestion, or go crazy and implement what you think will impress us:
