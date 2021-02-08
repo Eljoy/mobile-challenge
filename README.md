@@ -1,5 +1,5 @@
 # Welcome to the Mobile Challenge 👋
-Pleo is all about expenses. So ofcause we though that building a little expense feed app would be a suitable challenge for you. 
+Pleo is all about expenses. So of cause we though that building a little expense feed app would be a suitable challenge for you. 
 ## App Description
 The purpose of the app is to show a list of the expenses and allow the user to navigate to an Expense detail view. From the detail view the user should be able to get an overview of a given expense, but also to add details to it such as receipts and a note. 
 
