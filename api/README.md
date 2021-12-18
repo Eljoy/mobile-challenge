@@ -40,7 +40,7 @@ POST /expenses/:id
 - `id`: The id of the expense to update
 
 #### Body parameters:
-- `comment`: The comment to set on an expense
+- `note`: The note to set on an expense
 
 
 ### Uploading a receipt to an expense

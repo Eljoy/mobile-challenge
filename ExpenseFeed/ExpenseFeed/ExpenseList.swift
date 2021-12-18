@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct ExpenseList: View {
     @State var expenses = [Expense]()
     @State var fetching = false
     @State var total = 0
@@ -39,20 +39,10 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(expenses, id: \.id) { expense in
-                        HStack {
-                            ZStack {
-                                Circle().foregroundColor(.red).frame(width: 40)
-                                Text(expense.user.first.prefix(1).capitalized)
-                            }
-                            VStack(alignment: .leading) {
-                                Text(expense.merchant).font(.callout)
-                                Text(expense.user.first.capitalized + " " + expense.user.last.capitalized).font(Font.caption2)
-                            }
-                            Spacer()
-                            VStack(alignment: .trailing) {
-                                Text(expense.amount.value + " " + expense.amount.currency).font(.callout)
-                                Text(formatter.string(from: expense.date)).font(Font.caption2)
-                            }
+                        NavigationLink {
+                            ExpenseDetail(expense: expense)
+                        } label: {
+                            ExpenseCell(expense: expense)
                         }
                     }
                     if (total > expenses.count && !fetching) {
@@ -66,19 +56,11 @@ struct ContentView: View {
             fetchPage()
         }
     }
-    
-    var formatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
-        return formatter
-    }
-    
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ExpenseList_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ExpenseList()
     }
 }
 
@@ -99,7 +81,7 @@ struct Expense: Decodable {
     let date: Date
     let merchant: String
     let receipts: [String]
-    let comment: String
+    let note: String
     let category: String
     let user: User
 }
@@ -108,3 +90,6 @@ struct ExpensesResponse: Decodable {
     let expenses: [Expense]
     let total: Int
 }
+
+
+
