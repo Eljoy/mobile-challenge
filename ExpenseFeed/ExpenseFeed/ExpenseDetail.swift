@@ -8,6 +8,8 @@
 import SwiftUI
 import UIKit
 
+let PROJECT_DIR = "/Users/martin/git/mobile-challenge/api"
+
 struct ExpenseDetail: View {
     let expense: Expense
     
@@ -15,8 +17,30 @@ struct ExpenseDetail: View {
     @State var showImagePicker = false
     @State var image: UIImage?
     
-    func saveReceipt(url: URL) {
-        
+    var didUpdateExpense: (() -> ())?
+    
+    func saveReceipt(image: UIImage) {
+        Task {
+            _ = try? await URLSession.shared.data(for: formRequest(
+                url: URL(string: "http://localhost:3000/expenses/\(expense.id)/receipts")!,
+                image: image)
+            )
+            didUpdateExpense?()
+        }
+    }
+    
+    func saveNote() {
+        Task {
+            struct NoteRequest: Encodable {
+                let note: String
+            }
+            var request = URLRequest(url: URL(string: "http://localhost:3000/expenses/\(expense.id)")!)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try? JSONEncoder.init().encode(NoteRequest(note: note))
+            _ = try? await URLSession.shared.data(for: request)
+            didUpdateExpense?()
+        }
     }
     
     var body: some View {
@@ -42,11 +66,17 @@ struct ExpenseDetail: View {
                 VStack {
                     TextField("Note...", text: $note).task {
                         note = expense.note
-                    }.padding(.bottom, 12)
+                    }.padding(.bottom, 12).onSubmit {
+                        saveNote()
+                    }
                     ScrollView(.horizontal) {
                         HStack {
-                            ForEach(["mojn", "lol"], id: \.self) { receipt in
-                                Text(receipt)
+                            ForEach(expense.receipts, id: \.url) { receipt in
+                                Image(uiImage: UIImage(contentsOfFile: "\(PROJECT_DIR)/\(receipt.url)") ?? UIImage())
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 150, height: 150)
+                                    .cornerRadius(12)
                             }
                             Button {
                                 showImagePicker = true
@@ -65,7 +95,7 @@ struct ExpenseDetail: View {
         }
         .ignoresSafeArea(edges: .vertical)
         .sheet(isPresented: $showImagePicker) {
-            ImagePicker { saveReceipt(url: $0) }
+            ImagePicker { saveReceipt(image: $0) }
         }
     }
     
@@ -74,6 +104,29 @@ struct ExpenseDetail: View {
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
         return formatter
+    }
+    
+    func formRequest(url: URL, image: UIImage) -> URLRequest {
+        guard let data = image.jpegData(compressionQuality: 0.1) else { fatalError("Expected to be able to convert image to data") }
+        let uuid = UUID().uuidString
+        let CRLF = "\r\n"
+        let type = "image/jpeg"
+        let boundary = "----Boundary.\(uuid)"
+        
+        var body = Data()
+        body.append(("--\(boundary)" + CRLF).data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"receipt\"; filename=\"file.jpg\"\r\n".data(using: .utf8)!)
+        body.append(("Content-Type: \(type)" + CRLF + CRLF).data(using: .utf8)!)
+        body.append(data)
+        body.append(CRLF.data(using: .utf8)!)
+        body.append(("--\(boundary)--" + CRLF).data(using: .utf8)!)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.timeoutInterval = 30.0
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.httpBody = body
+        return request
     }
 }
 
@@ -88,9 +141,7 @@ struct ExpenseDetail_Previews: PreviewProvider {
                 ),
                 date: .init(timeIntervalSince1970: 1639780202),
                 merchant: "Apple Store",
-                receipts: [
-                    "hello", "i'm", "martin"
-                ],
+                receipts: [],
                 note: "",
                 category: "",
                 user: .init(

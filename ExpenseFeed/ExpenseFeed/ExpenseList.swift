@@ -21,6 +21,30 @@ struct ExpenseList: View {
         self.offset = offset + limit
     }
     
+    func fetchExpense(id: String) async throws -> Expense {
+        let (data, _) = try await URLSession.shared.data(
+            from: URL(string: "http://localhost:3000/expenses/\(id)")!
+        )
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        return try decoder.decode(Expense.self, from: data)
+    }
+    
+    func updateExpense(id: String) {
+        Task {
+            do {
+                let expense = try await fetchExpense(id: id)
+                if let index = expenses.firstIndex(where: { $0.id == id }) {
+                    expenses[index] = expense
+                }
+            } catch let error {
+                print(error)
+            }
+        }
+    }
+    
     func fetchPage() {
         guard !fetching else { return }
         fetching = true
@@ -40,7 +64,9 @@ struct ExpenseList: View {
                 List {
                     ForEach(expenses, id: \.id) { expense in
                         NavigationLink {
-                            ExpenseDetail(expense: expense)
+                            ExpenseDetail(expense: expense) {
+                                updateExpense(id: expense.id)
+                            }
                         } label: {
                             ExpenseCell(expense: expense)
                         }
@@ -75,12 +101,16 @@ struct Amount: Decodable {
     let currency: String
 }
 
+struct Receipt: Decodable {
+    let url: String
+}
+
 struct Expense: Decodable {
     let id: String
     let amount: Amount
     let date: Date
     let merchant: String
-    let receipts: [String]
+    let receipts: [Receipt]
     let note: String
     let category: String
     let user: User

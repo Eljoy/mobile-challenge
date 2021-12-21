@@ -12,7 +12,7 @@ import SwiftUI
 struct ImagePicker: UIViewControllerRepresentable {
     
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    let didPickImage: (URL) -> ()
+    let didPickImage: (UIImage) -> ()
     
     @Environment(\.presentationMode) private var presentationMode
 
@@ -41,8 +41,8 @@ struct ImagePicker: UIViewControllerRepresentable {
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
-            if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
-                parent.didPickImage(url)
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                parent.didPickImage(image)
             }
             
             parent.presentationMode.wrappedValue.dismiss()
