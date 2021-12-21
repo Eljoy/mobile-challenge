@@ -8,8 +8,6 @@
 import SwiftUI
 import UIKit
 
-let PROJECT_DIR = "/Users/martin/git/mobile-challenge/api"
-
 struct ExpenseDetail: View {
     let expense: Expense
     
@@ -72,7 +70,7 @@ struct ExpenseDetail: View {
                     ScrollView(.horizontal) {
                         HStack {
                             ForEach(expense.receipts, id: \.url) { receipt in
-                                Image(uiImage: UIImage(contentsOfFile: "\(PROJECT_DIR)/\(receipt.url)") ?? UIImage())
+                                Image(uiImage: UIImage(contentsOfFile: receipt.url) ?? UIImage())
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 150, height: 150)

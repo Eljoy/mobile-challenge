@@ -1,8 +1,6 @@
 import * as express from 'express'
-
-import { expenses } from '../data/expenses'
-import { UploadedFile } from 'express-fileupload';
-import { dirname } from 'path';
+import {expenses} from '../data/expenses'
+import {UploadedFile} from 'express-fileupload';
 
 const router = express.Router()
 
@@ -60,21 +58,21 @@ router.post('/:id/receipts', (req, res) => {
   if (!req.files) {
     return res.status(400).send('No files were uploaded.');
   }
-
+  
   const id = req.params.id
   const expense = expenses.find((expense) => expense.id === id)
 
   if (expense) {
     const receipt = req.files.receipt as UploadedFile
     const receiptId = `${id}-${expense.receipts.length}`
-    receipt.mv(`${process.cwd()}/receipts/${receiptId}`, (err) => {
+    const url = process.cwd().concat(`/receipts/${receiptId}`)
+
+    receipt.mv(url, (err) => {
       if (err) {
         return res.status(500).send(err);
       }
    
-      expense.receipts.push({
-        url: `/receipts/${receiptId}`
-      })
+      expense.receipts.push({url})
       res.status(200).send(expense)
     })
 
