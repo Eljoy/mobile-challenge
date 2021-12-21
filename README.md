@@ -1,5 +1,5 @@
 # Welcome to the Mobile Challenge 👋
-Pleo is all about expenses. So of cause we though that building a little expense feed app would be a suitable challenge for you. 
+Pleo is all about expenses. So of cause we though that working on a little expense feed app would be a suitable challenge for you. 
 ## App Description
 The purpose of the app is to show a list of the expenses and allow the user to navigate to an Expense detail view. From the detail view the user should be able to get an overview of a given expense, but also to add details to it such as receipts and a note. 
 
@@ -11,7 +11,7 @@ We're hoping the app will end up with all the "Must have"-requirements and a few
 
 #### **Nice to have**
 - User can filters on the expense list (client side filters)
-- User can add a comment to an expense
+- User can add a note to an expense
 - User can add a receipt image to an expense
 - Expenses on the expense list are fetched gradually by using pagination
 
@@ -35,7 +35,7 @@ In this repo we're provided you with a node server, that you can use get expense
 
 In the Pleo Mobile app we use TypeScript and [react-native-navigation](https://github.com/wix/react-native-navigation). We've initialized an almost empty React Native project, with the basic project scaffolding. Feel free to change any of this if you prefer, just mention why you chose to do so in the project description.
 
-We've also added a few styling contants that we use in Pleo (see [`/style`](https://github.com/pleo-io/mobile-challenge/tree/master/ExpenseFeed/style)), to help you get a bit closer to the styling we use in our app.
+We've also added a few styling constants that we use in Pleo (see [`/style`](https://github.com/pleo-io/mobile-challenge/tree/master/ExpenseFeed/style)), to help you get a bit closer to the styling we use in our app.
 
 ## Want to go the extra mile?
 Here's few suggestion, or go crazy and implement what you think will impress us:
