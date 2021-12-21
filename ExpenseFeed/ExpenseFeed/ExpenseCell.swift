@@ -1,10 +1,3 @@
-//
-//  ExpenseCellView.swift
-//  ExpenseFeed
-//
-//  Created by Martin Wiingaard on 17/12/2021.
-//
-
 import SwiftUI
 
 struct ExpenseCell: View {

@@ -1,19 +1,11 @@
-//
-//  ExpenseDetail.swift
-//  ExpenseFeed
-//
-//  Created by Martin Wiingaard on 17/12/2021.
-//
-
 import SwiftUI
-import UIKit
 
 struct ExpenseDetail: View {
     let expense: Expense
     
     @State var note: String = ""
     @State var showImagePicker = false
-    @State var image: UIImage?
+    @State var showImageModal: ImageModal?
     
     var didUpdateExpense: (() -> ())?
     
@@ -70,11 +62,19 @@ struct ExpenseDetail: View {
                     ScrollView(.horizontal) {
                         HStack {
                             ForEach(expense.receipts, id: \.url) { receipt in
-                                Image(uiImage: UIImage(contentsOfFile: receipt.url) ?? UIImage())
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 150, height: 150)
-                                    .cornerRadius(12)
+                                let image = UIImage(contentsOfFile: receipt.url) ?? UIImage()
+                                Button {
+                                    showImageModal = ImageModal(
+                                        id: receipt.url,
+                                        image: image
+                                    )
+                                } label: {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 150, height: 150)
+                                        .cornerRadius(12)
+                                }
                             }
                             Button {
                                 showImagePicker = true
@@ -94,6 +94,11 @@ struct ExpenseDetail: View {
         .ignoresSafeArea(edges: .vertical)
         .sheet(isPresented: $showImagePicker) {
             ImagePicker { saveReceipt(image: $0) }
+        }
+        .sheet(item: $showImageModal) { imageModal in
+            Image(uiImage: imageModal.image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
         }
     }
     
@@ -126,6 +131,11 @@ struct ExpenseDetail: View {
         request.httpBody = body
         return request
     }
+}
+
+struct ImageModal: Identifiable {
+    let id: String
+    let image: UIImage
 }
 
 struct ExpenseDetail_Previews: PreviewProvider {

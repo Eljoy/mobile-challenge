@@ -1,10 +1,3 @@
-//
-//  Colors.swift
-//  ExpenseFeed
-//
-//  Created by Martin Wiingaard on 16/12/2021.
-//
-
 import UIKit
 
 struct Colors {

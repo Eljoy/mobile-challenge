@@ -1,10 +1,3 @@
-//
-//  ImagePicker.swift
-//  ExpenseFeed
-//
-//  Created by Martin Wiingaard on 18/12/2021.
-//
-
 import UIKit
 import SwiftUI
 

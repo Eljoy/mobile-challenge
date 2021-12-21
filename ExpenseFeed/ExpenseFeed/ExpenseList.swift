@@ -34,13 +34,11 @@ struct ExpenseList: View {
     
     func updateExpense(id: String) {
         Task {
-            do {
-                let expense = try await fetchExpense(id: id)
-                if let index = expenses.firstIndex(where: { $0.id == id }) {
-                    expenses[index] = expense
-                }
-            } catch let error {
-                print(error)
+            guard let expense = try? await fetchExpense(id: id) else {
+                return
+            }
+            if let index = expenses.firstIndex(where: { $0.id == id }) {
+                expenses[index] = expense
             }
         }
     }
@@ -49,11 +47,7 @@ struct ExpenseList: View {
         guard !fetching else { return }
         fetching = true
         Task {
-            do {
-                try await fetchExpenses(limit: limit, offset: offset)
-            } catch let error {
-                print("Fetch expenses failed:", error)
-            }
+            let _ = try? await fetchExpenses(limit: limit, offset: offset)
         }
         fetching = false
     }
@@ -120,6 +114,3 @@ struct ExpensesResponse: Decodable {
     let expenses: [Expense]
     let total: Int
 }
-
-
-
