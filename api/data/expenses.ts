@@ -7,7 +7,7 @@ interface Expense {
   date: string;
   merchant: string;
   receipts: any[];
-  comment: string;
+  note: string;
   category: string;
   user: {
     first: string,
@@ -26,7 +26,7 @@ export const expenses: Expense[] = [
     date: '2017-06-21T08:45:09.326Z',
     merchant: 'QUONK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Atkins',
@@ -43,7 +43,7 @@ export const expenses: Expense[] = [
     date: '2017-05-30T14:12:31.054Z',
     merchant: 'WRAPTURE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Barbara',
@@ -60,7 +60,7 @@ export const expenses: Expense[] = [
     date: '2017-06-19T23:01:32.198Z',
     merchant: 'SENMAO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Berta',
@@ -77,7 +77,7 @@ export const expenses: Expense[] = [
     date: '2014-09-16T04:02:29.331Z',
     merchant: 'UPDAT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Guadalupe',
@@ -94,7 +94,7 @@ export const expenses: Expense[] = [
     date: '2014-04-10T23:16:08.764Z',
     merchant: 'ZORROMOP',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Irma',
@@ -111,7 +111,7 @@ export const expenses: Expense[] = [
     date: '2015-03-16T16:51:35.666Z',
     merchant: 'POLARAX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Wong',
@@ -128,7 +128,7 @@ export const expenses: Expense[] = [
     date: '2016-01-03T08:29:14.959Z',
     merchant: 'NURPLEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mitchell',
@@ -145,7 +145,7 @@ export const expenses: Expense[] = [
     date: '2017-02-23T13:02:20.101Z',
     merchant: 'YURTURE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Debora',
@@ -162,7 +162,7 @@ export const expenses: Expense[] = [
     date: '2016-01-31T18:31:48.972Z',
     merchant: 'DUFLEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Eloise',
@@ -179,7 +179,7 @@ export const expenses: Expense[] = [
     date: '2017-06-18T10:45:38.038Z',
     merchant: 'APPLIDECK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Carissa',
@@ -196,7 +196,7 @@ export const expenses: Expense[] = [
     date: '2018-05-12T12:53:41.495Z',
     merchant: 'KRAG',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Dominique',
@@ -213,7 +213,7 @@ export const expenses: Expense[] = [
     date: '2017-05-28T06:40:35.365Z',
     merchant: 'STELAECOR',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Maria',
@@ -230,7 +230,7 @@ export const expenses: Expense[] = [
     date: '2017-01-19T05:45:23.857Z',
     merchant: 'QUIZKA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ray',
@@ -247,7 +247,7 @@ export const expenses: Expense[] = [
     date: '2015-08-10T05:48:00.257Z',
     merchant: 'MARQET',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Bartlett',
@@ -264,7 +264,7 @@ export const expenses: Expense[] = [
     date: '2017-05-20T04:43:41.788Z',
     merchant: 'JUMPSTACK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Bender',
@@ -281,7 +281,7 @@ export const expenses: Expense[] = [
     date: '2017-02-01T04:12:48.146Z',
     merchant: 'EMPIRICA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Marshall',
@@ -298,7 +298,7 @@ export const expenses: Expense[] = [
     date: '2015-04-17T21:26:09.308Z',
     merchant: 'JASPER',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Brown',
@@ -315,7 +315,7 @@ export const expenses: Expense[] = [
     date: '2015-06-06T02:57:22.629Z',
     merchant: 'DIGIRANG',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Butler',
@@ -332,7 +332,7 @@ export const expenses: Expense[] = [
     date: '2017-04-16T16:36:03.758Z',
     merchant: 'QUILITY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Sofia',
@@ -349,7 +349,7 @@ export const expenses: Expense[] = [
     date: '2015-06-03T12:50:02.352Z',
     merchant: 'KNOWLYSIS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Matilda',
@@ -366,7 +366,7 @@ export const expenses: Expense[] = [
     date: '2018-04-03T18:30:28.548Z',
     merchant: 'DIGIAL',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Weaver',
@@ -383,7 +383,7 @@ export const expenses: Expense[] = [
     date: '2014-09-06T12:04:20.722Z',
     merchant: 'PRISMATIC',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Cardenas',
@@ -400,7 +400,7 @@ export const expenses: Expense[] = [
     date: '2016-05-26T06:42:24.102Z',
     merchant: 'PARLEYNET',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Lawrence',
@@ -417,7 +417,7 @@ export const expenses: Expense[] = [
     date: '2016-06-08T17:37:30.593Z',
     merchant: 'KOZGENE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Lila',
@@ -434,7 +434,7 @@ export const expenses: Expense[] = [
     date: '2015-03-11T17:51:53.076Z',
     merchant: 'ZILIDIUM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Penny',
@@ -451,7 +451,7 @@ export const expenses: Expense[] = [
     date: '2015-08-13T04:03:57.388Z',
     merchant: 'QUILTIGEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Small',
@@ -468,7 +468,7 @@ export const expenses: Expense[] = [
     date: '2015-02-26T13:11:53.943Z',
     merchant: 'ZILLACON',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Janette',
@@ -485,7 +485,7 @@ export const expenses: Expense[] = [
     date: '2018-01-14T22:38:10.896Z',
     merchant: 'MOBILDATA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Selena',
@@ -502,7 +502,7 @@ export const expenses: Expense[] = [
     date: '2014-05-09T09:11:18.600Z',
     merchant: 'ZENTURY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Heather',
@@ -519,7 +519,7 @@ export const expenses: Expense[] = [
     date: '2016-03-01T09:41:41.936Z',
     merchant: 'PLASMOSIS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Silvia',
@@ -536,7 +536,7 @@ export const expenses: Expense[] = [
     date: '2017-11-06T07:50:15.471Z',
     merchant: 'BEDDER',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Gallegos',
@@ -553,7 +553,7 @@ export const expenses: Expense[] = [
     date: '2017-09-19T05:43:58.317Z',
     merchant: 'XIXAN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Downs',
@@ -570,7 +570,7 @@ export const expenses: Expense[] = [
     date: '2018-01-16T04:38:39.682Z',
     merchant: 'KIOSK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Spence',
@@ -587,7 +587,7 @@ export const expenses: Expense[] = [
     date: '2017-12-08T00:14:14.498Z',
     merchant: 'VALREDA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Amelia',
@@ -604,7 +604,7 @@ export const expenses: Expense[] = [
     date: '2015-05-07T08:42:49.040Z',
     merchant: 'QUILCH',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Janis',
@@ -621,7 +621,7 @@ export const expenses: Expense[] = [
     date: '2014-06-02T22:42:05.643Z',
     merchant: 'OCTOCORE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Renee',
@@ -638,7 +638,7 @@ export const expenses: Expense[] = [
     date: '2015-05-05T16:36:06.595Z',
     merchant: 'AMTAP',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Vivian',
@@ -655,7 +655,7 @@ export const expenses: Expense[] = [
     date: '2014-08-06T22:47:29.835Z',
     merchant: 'BRISTO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Carolina',
@@ -672,7 +672,7 @@ export const expenses: Expense[] = [
     date: '2016-03-10T19:40:17.993Z',
     merchant: 'AFFLUEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'William',
@@ -689,7 +689,7 @@ export const expenses: Expense[] = [
     date: '2015-11-06T16:06:52.245Z',
     merchant: 'ROCKABYE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Sheryl',
@@ -706,7 +706,7 @@ export const expenses: Expense[] = [
     date: '2017-04-02T23:07:01.968Z',
     merchant: 'TERRAGEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ronda',
@@ -723,7 +723,7 @@ export const expenses: Expense[] = [
     date: '2017-07-13T10:48:59.380Z',
     merchant: 'BUZZWORKS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Cathy',
@@ -740,7 +740,7 @@ export const expenses: Expense[] = [
     date: '2014-10-28T23:36:08.142Z',
     merchant: 'TYPHONICA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Fletcher',
@@ -757,7 +757,7 @@ export const expenses: Expense[] = [
     date: '2017-06-07T23:16:55.055Z',
     merchant: 'RODEMCO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Hawkins',
@@ -774,7 +774,7 @@ export const expenses: Expense[] = [
     date: '2016-12-17T12:59:13.036Z',
     merchant: 'ZENSUS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ellison',
@@ -791,7 +791,7 @@ export const expenses: Expense[] = [
     date: '2018-05-15T07:33:37.031Z',
     merchant: 'ENTOGROK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Claire',
@@ -808,7 +808,7 @@ export const expenses: Expense[] = [
     date: '2014-12-24T16:09:08.229Z',
     merchant: 'INTERLOO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Thornton',
@@ -825,7 +825,7 @@ export const expenses: Expense[] = [
     date: '2014-03-17T02:35:59.394Z',
     merchant: 'NITRACYR',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Estelle',
@@ -842,7 +842,7 @@ export const expenses: Expense[] = [
     date: '2015-04-17T06:21:20.415Z',
     merchant: 'ZILLAR',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Kane',
@@ -859,7 +859,7 @@ export const expenses: Expense[] = [
     date: '2017-01-07T15:54:40.908Z',
     merchant: 'POLARIUM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Juliet',
@@ -876,7 +876,7 @@ export const expenses: Expense[] = [
     date: '2017-08-26T15:33:39.268Z',
     merchant: 'MANGLO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Tracy',
@@ -893,7 +893,7 @@ export const expenses: Expense[] = [
     date: '2015-08-12T14:16:38.465Z',
     merchant: 'JUNIPOOR',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Claudine',
@@ -910,7 +910,7 @@ export const expenses: Expense[] = [
     date: '2018-01-20T13:58:32.329Z',
     merchant: 'EXOVENT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Estes',
@@ -927,7 +927,7 @@ export const expenses: Expense[] = [
     date: '2015-04-30T22:41:12.145Z',
     merchant: 'COMCUBINE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Minnie',
@@ -944,7 +944,7 @@ export const expenses: Expense[] = [
     date: '2017-04-21T05:42:50.785Z',
     merchant: 'ILLUMITY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Lourdes',
@@ -961,7 +961,7 @@ export const expenses: Expense[] = [
     date: '2018-01-21T19:11:01.895Z',
     merchant: 'GINKLE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Sampson',
@@ -978,7 +978,7 @@ export const expenses: Expense[] = [
     date: '2016-06-26T10:11:28.477Z',
     merchant: 'KANGLE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Hinton',
@@ -995,7 +995,7 @@ export const expenses: Expense[] = [
     date: '2015-04-04T04:08:57.928Z',
     merchant: 'CORECOM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Alexandria',
@@ -1012,7 +1012,7 @@ export const expenses: Expense[] = [
     date: '2018-05-26T07:52:07.560Z',
     merchant: 'MULTRON',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Latoya',
@@ -1029,7 +1029,7 @@ export const expenses: Expense[] = [
     date: '2018-02-12T09:40:44.742Z',
     merchant: 'GENMOM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Virginia',
@@ -1046,7 +1046,7 @@ export const expenses: Expense[] = [
     date: '2017-11-29T00:40:29.337Z',
     merchant: 'COGNICODE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ophelia',
@@ -1063,7 +1063,7 @@ export const expenses: Expense[] = [
     date: '2018-05-16T01:49:45.368Z',
     merchant: 'EXTRAGEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mckenzie',
@@ -1080,7 +1080,7 @@ export const expenses: Expense[] = [
     date: '2017-01-01T00:38:45.911Z',
     merchant: 'PORTALIS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Reyna',
@@ -1097,7 +1097,7 @@ export const expenses: Expense[] = [
     date: '2014-08-28T07:36:19.956Z',
     merchant: 'INSURETY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Villarreal',
@@ -1114,7 +1114,7 @@ export const expenses: Expense[] = [
     date: '2014-04-11T05:26:48.836Z',
     merchant: 'COMFIRM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Harvey',
@@ -1131,7 +1131,7 @@ export const expenses: Expense[] = [
     date: '2016-10-07T14:48:58.904Z',
     merchant: 'FORTEAN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mays',
@@ -1148,7 +1148,7 @@ export const expenses: Expense[] = [
     date: '2016-12-08T03:18:34.821Z',
     merchant: 'CANDECOR',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Hicks',
@@ -1165,7 +1165,7 @@ export const expenses: Expense[] = [
     date: '2014-01-20T13:32:50.522Z',
     merchant: 'PHEAST',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Caldwell',
@@ -1182,7 +1182,7 @@ export const expenses: Expense[] = [
     date: '2016-12-18T11:47:08.943Z',
     merchant: 'MEDESIGN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Schwartz',
@@ -1199,7 +1199,7 @@ export const expenses: Expense[] = [
     date: '2014-11-21T19:56:05.315Z',
     merchant: 'BIOLIVE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Chris',
@@ -1216,7 +1216,7 @@ export const expenses: Expense[] = [
     date: '2016-02-11T16:59:59.597Z',
     merchant: 'SULTRAXIN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Bernadine',
@@ -1233,7 +1233,7 @@ export const expenses: Expense[] = [
     date: '2016-10-10T18:42:05.035Z',
     merchant: 'GEEKFARM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Peterson',
@@ -1250,7 +1250,7 @@ export const expenses: Expense[] = [
     date: '2015-09-02T05:16:19.547Z',
     merchant: 'HYPLEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Justine',
@@ -1267,7 +1267,7 @@ export const expenses: Expense[] = [
     date: '2016-12-30T17:18:26.228Z',
     merchant: 'TRANSLINK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Beth',
@@ -1284,7 +1284,7 @@ export const expenses: Expense[] = [
     date: '2018-02-04T03:47:31.125Z',
     merchant: 'URBANSHEE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Pate',
@@ -1301,7 +1301,7 @@ export const expenses: Expense[] = [
     date: '2014-12-14T14:01:42.112Z',
     merchant: 'ENERSAVE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mercedes',
@@ -1318,7 +1318,7 @@ export const expenses: Expense[] = [
     date: '2017-11-13T15:02:07.329Z',
     merchant: 'ORBIN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Angelina',
@@ -1335,7 +1335,7 @@ export const expenses: Expense[] = [
     date: '2014-09-08T09:12:38.691Z',
     merchant: 'DIGIGEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Randi',
@@ -1352,7 +1352,7 @@ export const expenses: Expense[] = [
     date: '2015-04-07T12:26:15.285Z',
     merchant: 'QABOOS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Willis',
@@ -1369,7 +1369,7 @@ export const expenses: Expense[] = [
     date: '2016-07-23T06:52:03.420Z',
     merchant: 'ENAUT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Aurelia',
@@ -1386,7 +1386,7 @@ export const expenses: Expense[] = [
     date: '2017-02-26T16:56:25.194Z',
     merchant: 'OPTICALL',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Harrison',
@@ -1403,7 +1403,7 @@ export const expenses: Expense[] = [
     date: '2017-02-10T04:55:47.858Z',
     merchant: 'FURNAFIX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Kelsey',
@@ -1420,7 +1420,7 @@ export const expenses: Expense[] = [
     date: '2016-12-26T15:51:43.997Z',
     merchant: 'ZYTRAC',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Janine',
@@ -1437,7 +1437,7 @@ export const expenses: Expense[] = [
     date: '2015-11-28T17:45:36.125Z',
     merchant: 'ISOSTREAM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Tucker',
@@ -1454,7 +1454,7 @@ export const expenses: Expense[] = [
     date: '2014-10-29T02:59:39.775Z',
     merchant: 'TROPOLIS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Savannah',
@@ -1471,7 +1471,7 @@ export const expenses: Expense[] = [
     date: '2018-05-12T06:51:42.896Z',
     merchant: 'SCHOOLIO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Wheeler',
@@ -1488,7 +1488,7 @@ export const expenses: Expense[] = [
     date: '2014-03-11T03:31:08.945Z',
     merchant: 'INVENTURE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Bauer',
@@ -1505,7 +1505,7 @@ export const expenses: Expense[] = [
     date: '2014-04-01T20:42:58.429Z',
     merchant: 'RADIANTIX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Sabrina',
@@ -1522,7 +1522,7 @@ export const expenses: Expense[] = [
     date: '2015-03-18T10:31:04.574Z',
     merchant: 'OLYMPIX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Kemp',
@@ -1539,7 +1539,7 @@ export const expenses: Expense[] = [
     date: '2014-04-03T15:58:20.355Z',
     merchant: 'NORSUP',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mccray',
@@ -1556,7 +1556,7 @@ export const expenses: Expense[] = [
     date: '2018-08-12T00:37:46.342Z',
     merchant: 'KONNECT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Pam',
@@ -1573,7 +1573,7 @@ export const expenses: Expense[] = [
     date: '2016-07-21T08:58:12.509Z',
     merchant: 'DANJA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ericka',
@@ -1590,7 +1590,7 @@ export const expenses: Expense[] = [
     date: '2014-10-10T10:42:15.999Z',
     merchant: 'IZZBY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Baird',
@@ -1607,7 +1607,7 @@ export const expenses: Expense[] = [
     date: '2015-02-13T13:20:37.677Z',
     merchant: 'ISOPOP',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Bird',
@@ -1624,7 +1624,7 @@ export const expenses: Expense[] = [
     date: '2014-09-06T21:33:30.681Z',
     merchant: 'FANGOLD',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Zamora',
@@ -1641,7 +1641,7 @@ export const expenses: Expense[] = [
     date: '2017-10-21T20:39:52.346Z',
     merchant: 'PROTODYNE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Stephanie',
@@ -1658,7 +1658,7 @@ export const expenses: Expense[] = [
     date: '2016-08-21T18:47:23.532Z',
     merchant: 'LUDAK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Harvey',
@@ -1675,7 +1675,7 @@ export const expenses: Expense[] = [
     date: '2016-12-06T23:44:04.413Z',
     merchant: 'BESTO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Shana',
@@ -1692,7 +1692,7 @@ export const expenses: Expense[] = [
     date: '2017-05-25T07:59:38.697Z',
     merchant: 'SKYPLEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Rose',
@@ -1709,7 +1709,7 @@ export const expenses: Expense[] = [
     date: '2016-09-20T05:27:19.994Z',
     merchant: 'WATERBABY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Lillie',
@@ -1726,7 +1726,7 @@ export const expenses: Expense[] = [
     date: '2014-07-25T13:30:30.323Z',
     merchant: 'GENEKOM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Long',
@@ -1743,7 +1743,7 @@ export const expenses: Expense[] = [
     date: '2017-12-29T18:28:16.097Z',
     merchant: 'EMTRAK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Imogene',
@@ -1760,7 +1760,7 @@ export const expenses: Expense[] = [
     date: '2016-11-17T04:19:40.235Z',
     merchant: 'BLANET',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Nancy',
@@ -1777,7 +1777,7 @@ export const expenses: Expense[] = [
     date: '2017-08-12T18:38:14.603Z',
     merchant: 'AUSTEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Fay',
@@ -1794,7 +1794,7 @@ export const expenses: Expense[] = [
     date: '2018-04-29T03:30:46.282Z',
     merchant: 'BILLMED',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Barry',
@@ -1811,7 +1811,7 @@ export const expenses: Expense[] = [
     date: '2018-06-25T09:34:47.477Z',
     merchant: 'MACRONAUT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Dena',
@@ -1828,7 +1828,7 @@ export const expenses: Expense[] = [
     date: '2018-09-10T02:11:29.184Z',
     merchant: 'KAGE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Vickie',
@@ -1845,7 +1845,7 @@ export const expenses: Expense[] = [
     date: '2016-09-14T04:06:29.666Z',
     merchant: 'UNEEQ',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Bianca',
@@ -1862,7 +1862,7 @@ export const expenses: Expense[] = [
     date: '2016-06-09T13:03:01.608Z',
     merchant: 'CEMENTION',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Celia',
@@ -1879,7 +1879,7 @@ export const expenses: Expense[] = [
     date: '2014-06-12T15:23:51.220Z',
     merchant: 'VITRICOMP',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Waters',
@@ -1896,7 +1896,7 @@ export const expenses: Expense[] = [
     date: '2014-09-30T07:13:27.603Z',
     merchant: 'KLUGGER',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Kathy',
@@ -1913,7 +1913,7 @@ export const expenses: Expense[] = [
     date: '2018-03-23T08:31:02.663Z',
     merchant: 'ELEMANTRA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Frances',
@@ -1930,7 +1930,7 @@ export const expenses: Expense[] = [
     date: '2018-01-16T22:15:16.209Z',
     merchant: 'BRAINCLIP',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Constance',
@@ -1947,7 +1947,7 @@ export const expenses: Expense[] = [
     date: '2016-10-07T06:34:04.760Z',
     merchant: 'XLEEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Annette',
@@ -1964,7 +1964,7 @@ export const expenses: Expense[] = [
     date: '2017-10-27T19:42:53.734Z',
     merchant: 'EXOSTREAM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Tamera',
@@ -1981,7 +1981,7 @@ export const expenses: Expense[] = [
     date: '2015-02-28T06:03:13.494Z',
     merchant: 'PREMIANT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Jewell',
@@ -1998,7 +1998,7 @@ export const expenses: Expense[] = [
     date: '2014-06-24T10:32:05.799Z',
     merchant: 'GRAINSPOT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Burris',
@@ -2015,7 +2015,7 @@ export const expenses: Expense[] = [
     date: '2017-01-25T20:31:03.315Z',
     merchant: 'NITRACYR',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Lynette',
@@ -2032,7 +2032,7 @@ export const expenses: Expense[] = [
     date: '2014-12-01T07:26:56.320Z',
     merchant: 'ZILLA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ava',
@@ -2049,7 +2049,7 @@ export const expenses: Expense[] = [
     date: '2015-03-20T16:40:40.322Z',
     merchant: 'OCEANICA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Hopkins',
@@ -2066,7 +2066,7 @@ export const expenses: Expense[] = [
     date: '2016-07-13T22:57:00.908Z',
     merchant: 'ZANYMAX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Harrison',
@@ -2083,7 +2083,7 @@ export const expenses: Expense[] = [
     date: '2014-12-15T04:21:05.935Z',
     merchant: 'APPLIDECK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Bennett',
@@ -2100,7 +2100,7 @@ export const expenses: Expense[] = [
     date: '2016-04-11T17:06:55.219Z',
     merchant: 'ESCENTA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Shannon',
@@ -2117,7 +2117,7 @@ export const expenses: Expense[] = [
     date: '2016-03-17T08:40:04.731Z',
     merchant: 'ENTALITY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Peggy',
@@ -2134,7 +2134,7 @@ export const expenses: Expense[] = [
     date: '2016-10-02T04:25:02.732Z',
     merchant: 'QUIZMO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Florence',
@@ -2151,7 +2151,7 @@ export const expenses: Expense[] = [
     date: '2015-02-06T20:53:59.580Z',
     merchant: 'ZAPHIRE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Laurie',
@@ -2168,7 +2168,7 @@ export const expenses: Expense[] = [
     date: '2015-06-18T04:58:54.185Z',
     merchant: 'DIGIQUE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Solis',
@@ -2185,7 +2185,7 @@ export const expenses: Expense[] = [
     date: '2017-11-07T13:35:37.130Z',
     merchant: 'ILLUMITY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Matilda',
@@ -2202,7 +2202,7 @@ export const expenses: Expense[] = [
     date: '2015-01-16T02:49:30.529Z',
     merchant: 'EXIAND',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'York',
@@ -2219,7 +2219,7 @@ export const expenses: Expense[] = [
     date: '2015-11-09T17:15:05.094Z',
     merchant: 'STRALOY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ray',
@@ -2236,7 +2236,7 @@ export const expenses: Expense[] = [
     date: '2015-05-24T20:51:39.368Z',
     merchant: 'CENTREXIN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Miranda',
@@ -2253,7 +2253,7 @@ export const expenses: Expense[] = [
     date: '2017-04-29T13:47:52.978Z',
     merchant: 'ZEDALIS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Etta',
@@ -2270,7 +2270,7 @@ export const expenses: Expense[] = [
     date: '2014-07-23T00:39:39.190Z',
     merchant: 'EARWAX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Elisa',
@@ -2287,7 +2287,7 @@ export const expenses: Expense[] = [
     date: '2014-12-10T12:40:14.568Z',
     merchant: 'ICOLOGY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Glenn',
@@ -2304,7 +2304,7 @@ export const expenses: Expense[] = [
     date: '2016-06-17T18:54:09.352Z',
     merchant: 'WARETEL',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Bobbie',
@@ -2321,7 +2321,7 @@ export const expenses: Expense[] = [
     date: '2017-10-15T23:42:24.772Z',
     merchant: 'COMBOGEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ross',
@@ -2338,7 +2338,7 @@ export const expenses: Expense[] = [
     date: '2014-01-08T02:34:44.551Z',
     merchant: 'ISOPLEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Ada',
@@ -2355,7 +2355,7 @@ export const expenses: Expense[] = [
     date: '2015-09-07T00:31:28.993Z',
     merchant: 'ACCUFARM',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Pat',
@@ -2372,7 +2372,7 @@ export const expenses: Expense[] = [
     date: '2018-02-22T16:25:40.540Z',
     merchant: 'EMERGENT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Christensen',
@@ -2389,7 +2389,7 @@ export const expenses: Expense[] = [
     date: '2017-11-06T09:10:02.038Z',
     merchant: 'PHARMEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Blanchard',
@@ -2406,7 +2406,7 @@ export const expenses: Expense[] = [
     date: '2018-01-14T12:04:38.077Z',
     merchant: 'HOUSEDOWN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Marie',
@@ -2423,7 +2423,7 @@ export const expenses: Expense[] = [
     date: '2015-07-09T11:12:12.614Z',
     merchant: 'PATHWAYS',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Maura',
@@ -2440,7 +2440,7 @@ export const expenses: Expense[] = [
     date: '2017-05-26T05:28:05.020Z',
     merchant: 'UPDAT',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Garza',
@@ -2457,7 +2457,7 @@ export const expenses: Expense[] = [
     date: '2016-11-14T05:52:18.433Z',
     merchant: 'XYQAG',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Huffman',
@@ -2474,7 +2474,7 @@ export const expenses: Expense[] = [
     date: '2015-01-11T15:10:10.911Z',
     merchant: 'NAMEGEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Inez',
@@ -2491,7 +2491,7 @@ export const expenses: Expense[] = [
     date: '2015-01-09T22:15:03.570Z',
     merchant: 'GOKO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Burgess',
@@ -2508,7 +2508,7 @@ export const expenses: Expense[] = [
     date: '2014-08-09T01:53:49.152Z',
     merchant: 'STROZEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Murphy',
@@ -2525,7 +2525,7 @@ export const expenses: Expense[] = [
     date: '2018-01-07T22:01:55.002Z',
     merchant: 'MEDMEX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Carr',
@@ -2542,7 +2542,7 @@ export const expenses: Expense[] = [
     date: '2018-04-16T03:26:43.651Z',
     merchant: 'AQUAFIRE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Robin',
@@ -2559,7 +2559,7 @@ export const expenses: Expense[] = [
     date: '2015-12-13T16:45:32.219Z',
     merchant: 'MARTGO',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Kelli',
@@ -2576,7 +2576,7 @@ export const expenses: Expense[] = [
     date: '2017-08-09T23:47:08.120Z',
     merchant: 'HANDSHAKE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Camacho',
@@ -2593,7 +2593,7 @@ export const expenses: Expense[] = [
     date: '2014-01-28T01:05:51.811Z',
     merchant: 'UNISURE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Coffey',
@@ -2610,7 +2610,7 @@ export const expenses: Expense[] = [
     date: '2017-07-26T05:01:14.427Z',
     merchant: 'KANGLE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Avila',
@@ -2627,7 +2627,7 @@ export const expenses: Expense[] = [
     date: '2015-08-24T21:39:19.507Z',
     merchant: 'VELITY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Martha',
@@ -2644,7 +2644,7 @@ export const expenses: Expense[] = [
     date: '2018-03-22T15:33:09.360Z',
     merchant: 'CIPROMOX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mona',
@@ -2661,7 +2661,7 @@ export const expenses: Expense[] = [
     date: '2016-08-09T08:58:53.634Z',
     merchant: 'INQUALA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mamie',
@@ -2678,7 +2678,7 @@ export const expenses: Expense[] = [
     date: '2017-06-01T01:22:24.225Z',
     merchant: 'TERRAGEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Rebekah',
@@ -2695,7 +2695,7 @@ export const expenses: Expense[] = [
     date: '2018-08-13T07:11:01.680Z',
     merchant: 'ASSITIA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Lowe',
@@ -2712,7 +2712,7 @@ export const expenses: Expense[] = [
     date: '2018-06-17T06:20:18.194Z',
     merchant: 'SURELOGIC',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Walsh',
@@ -2729,7 +2729,7 @@ export const expenses: Expense[] = [
     date: '2014-01-19T07:15:54.389Z',
     merchant: 'BUZZOPIA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Richmond',
@@ -2746,7 +2746,7 @@ export const expenses: Expense[] = [
     date: '2014-11-06T17:43:59.554Z',
     merchant: 'INTERGEEK',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'West',
@@ -2763,7 +2763,7 @@ export const expenses: Expense[] = [
     date: '2015-02-25T16:33:29.135Z',
     merchant: 'ZYPLE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mable',
@@ -2780,7 +2780,7 @@ export const expenses: Expense[] = [
     date: '2015-08-06T22:54:04.486Z',
     merchant: 'QUIZKA',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Georgette',
@@ -2797,7 +2797,7 @@ export const expenses: Expense[] = [
     date: '2014-04-11T03:18:47.602Z',
     merchant: 'MANTRIX',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Anita',
@@ -2814,7 +2814,7 @@ export const expenses: Expense[] = [
     date: '2015-05-09T05:01:08.179Z',
     merchant: 'SCENTY',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Sanchez',
@@ -2831,7 +2831,7 @@ export const expenses: Expense[] = [
     date: '2016-10-14T04:25:28.117Z',
     merchant: 'ENOMEN',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Palmer',
@@ -2848,7 +2848,7 @@ export const expenses: Expense[] = [
     date: '2015-12-02T14:47:19.618Z',
     merchant: 'MAGNAFONE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Mccormick',
@@ -2865,7 +2865,7 @@ export const expenses: Expense[] = [
     date: '2018-05-05T14:00:00.439Z',
     merchant: 'XINWARE',
     receipts: [],
-    comment: '',
+    note: '',
     category: '',
     user: {
       first: 'Flynn',
