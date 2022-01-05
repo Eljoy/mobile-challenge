@@ -5,7 +5,9 @@ import {UploadedFile} from 'express-fileupload';
 const router = express.Router()
 
 router.get('/', (req, res) => {
+  // @ts-ignore
   const limit = parseInt(req.query.limit) || 25
+  // @ts-ignore
   const offset = parseInt(req.query.offset) || 0
 
   res.send({

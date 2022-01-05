@@ -7,8 +7,8 @@ Note:
 ## Run the API
 In the `/api` folder run:
 ```sh
-npm install
-npm start
+yarn install
+yarn start
 ```
 
 API is now running at `http://localhost:3000`
