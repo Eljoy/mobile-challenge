@@ -35,7 +35,6 @@ val httpClient: HttpClient = HttpClient(OkHttp) {
         })
     }
     defaultRequest {
-//        contentType(ContentType.Application.Json)
         accept(ContentType.Application.Json)
     }
 }
@@ -45,10 +44,12 @@ val httpClient: HttpClient = HttpClient(OkHttp) {
 fun ExpenseList(navController: NavHostController) {
 
     var expenses by remember { mutableStateOf<List<Expense>>(arrayListOf()) }
+    val limits by remember { mutableStateOf(25) }
+    val offset by remember { mutableStateOf(0) }
 
     LaunchedEffect(Unit) {
         val htmlContent = httpClient.request {
-            url("http://192.168.0.111:3000/expenses?limit=25&offset=0")
+            url("http://192.168.0.111:3000/expenses?limit=$limits&offset=$offset")
             method = HttpMethod.Get
         }
         val body: ExpensesResponse = htmlContent.body()

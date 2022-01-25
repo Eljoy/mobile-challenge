@@ -22,18 +22,11 @@ class MainActivity : ComponentActivity() {
             NavHost(navController = navController, startDestination = "expenses") {
                 composable("expenses") { ExpenseList(navController) }
                 composable("details?expense={expense}") {
-                    val expenseJson = it.arguments?.getString("expense") ?: "none"
+                    val expenseJson = it.arguments?.getString("expense") ?: "{}"
                     val expense = Json.decodeFromString<Expense>(expenseJson)
                     ExpenseDetails(navController, expense)
                 }
             }
         }
     }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-
 }
