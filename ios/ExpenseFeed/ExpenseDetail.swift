@@ -62,18 +62,25 @@ struct ExpenseDetail: View {
                     ScrollView(.horizontal) {
                         HStack {
                             ForEach(expense.receipts, id: \.url) { receipt in
-                                let image = UIImage(contentsOfFile: receipt.url) ?? UIImage()
+                                let url = URL(string: "http://localhost:3000\(receipt.url)")!
                                 Button {
                                     showImageModal = ImageModal(
                                         id: receipt.url,
-                                        image: image
+                                        imageUrl: url
                                     )
                                 } label: {
-                                    Image(uiImage: image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 150, height: 150)
-                                        .cornerRadius(12)
+                                    AsyncImage(url: url) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                    } placeholder: {
+                                        ZStack {
+                                            ProgressView()
+                                            Rectangle().fill(Color(UIColor.gray.withAlphaComponent(0.2)))
+                                        }
+                                    }
+                                    .frame(width: 150, height: 150)
+                                    .cornerRadius(12)
                                 }
                             }
                             Button {
@@ -96,9 +103,16 @@ struct ExpenseDetail: View {
             ImagePicker { saveReceipt(image: $0) }
         }
         .sheet(item: $showImageModal) { imageModal in
-            Image(uiImage: imageModal.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            AsyncImage(url: imageModal.imageUrl) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                ZStack {
+                    ProgressView()
+                    Rectangle().fill(.white)
+                }
+            }
         }
     }
     
@@ -135,7 +149,7 @@ struct ExpenseDetail: View {
 
 struct ImageModal: Identifiable {
     let id: String
-    let image: UIImage
+    let imageUrl: URL
 }
 
 struct ExpenseDetail_Previews: PreviewProvider {
