@@ -1,0 +1,2 @@
+io/pleo/challange/BuildConfig.java
+ io.pleo.challange.BuildConfig
