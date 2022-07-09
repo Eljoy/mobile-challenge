@@ -6,6 +6,7 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@app/*": ["src/app/*"],
       "@design-system/*": ["src/design-system/*"],
       "@models/*": ["src/models/*"],
       "@features/*": ["src/features/*"],
