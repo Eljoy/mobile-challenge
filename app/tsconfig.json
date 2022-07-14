@@ -2,15 +2,18 @@
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
     "strict": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["src/app/*"],
+      "@api": ["src/api"],
+      "@common": ["src/common"],
+      "@app": ["src/app", "src/app/*"],
       "@design-system/*": ["src/design-system/*"],
       "@models/*": ["src/models/*"],
       "@features/*": ["src/features/*"],
-      "@screens/*": ["src/screens/*"],
+      "@screens": ["src/screens"],
     },
   },
   "include": ["./**/*"]

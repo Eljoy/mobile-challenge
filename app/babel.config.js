@@ -7,6 +7,8 @@ module.exports = {
         extensions: ['.ts', '.tsx'],
         alias: {
           '@app': ['./src/app'],
+          '@api': ['./src/api'],
+          '@common': ['./src/common'],
           '@design-system': ['./src/design-system'],
           '@features': ['./src/features'],
           '@models': ['./src/models'],
