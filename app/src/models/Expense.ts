@@ -4,7 +4,7 @@ import { User } from './User'
 export type Expense = {
   id: string
   amount: Amount
-  date: Date
+  date: string
   merchant: string
   receipts: any[]
   comment: string
