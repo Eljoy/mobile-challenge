@@ -1,22 +1,22 @@
-import { expenseApi } from '@api'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { expensesSlice } from '@features/expenses';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({
-  [expenseApi.reducerPath]: expenseApi.reducer,
-})
+  expenses: expensesSlice.reducer,
+});
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) => {
-    const middlewares = getDefaultMiddleware().concat(expenseApi.middleware)
+    const middlewares = getDefaultMiddleware().concat();
     if (__DEV__) {
-      const createDebugger = require('redux-flipper').default
-      middlewares.push(createDebugger())
+      const createDebugger = require('redux-flipper').default;
+      middlewares.push(createDebugger());
     }
-    return middlewares
+    return middlewares;
   },
-})
+});
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;
 
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
