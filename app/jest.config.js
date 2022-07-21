@@ -1,4 +1,4 @@
-const nodeModulesToIgnoreTransform = []
+const nodeModulesToIgnoreTransform = [];
 
 module.exports = {
   clearMocks: true,
@@ -9,9 +9,13 @@ module.exports = {
 
   preset: 'react-native',
 
-  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
+  setupFilesAfterEnv: [
+    '@testing-library/jest-native/extend-expect',
+    './jest.setup.js',
+  ],
 
   moduleNameMapper: {
+    '^@app(.*)$': '<rootDir>/src/app$1',
     '^@api(.*)$': '<rootDir>/src/api$1',
     '^@common(.*)$': '<rootDir>/src/common$1',
   },
@@ -33,4 +37,4 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!(' + nodeModulesToIgnoreTransform.join('|') + '))',
   ],
-}
+};
