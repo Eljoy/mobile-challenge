@@ -18,6 +18,7 @@ module.exports = {
     '^@app(.*)$': '<rootDir>/src/app$1',
     '^@api(.*)$': '<rootDir>/src/api$1',
     '^@common(.*)$': '<rootDir>/src/common$1',
+    '^@models(.*)$': '<rootDir>/src/models$1',
   },
 
   moduleDirectories: ['node_modules'],
@@ -35,6 +36,6 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/'],
 
   transformIgnorePatterns: [
-    'node_modules/(?!(' + nodeModulesToIgnoreTransform.join('|') + '))',
+    `node_modules/(?!(${nodeModulesToIgnoreTransform.join('|')}))`,
   ],
 };
