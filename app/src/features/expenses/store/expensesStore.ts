@@ -1,4 +1,3 @@
-import { getExpenses } from '@api';
 import { RootState } from '@app';
 import { Expense } from '@models/Expense';
 import {
@@ -6,6 +5,7 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit';
+import { getExpenses } from '../api';
 
 interface ExpensesState {
   expenses: Expense[];
