@@ -12,3 +12,13 @@ export const getExpenses = async (
   );
   return data;
 };
+
+export const updateExpenseComment = async (
+  id: Expense['id'],
+  comment: string
+): Promise<Expense> => {
+  const { data } = await axios.post<Expense>(`${API_URL}/expenses/${id}`, {
+    comment,
+  });
+  return data;
+};
