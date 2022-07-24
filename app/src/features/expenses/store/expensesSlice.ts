@@ -5,7 +5,7 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit';
-import { getExpenses } from '../api';
+import * as expenseApi from '../api';
 
 interface ExpensesState {
   expenses: Expense[];
@@ -30,9 +30,16 @@ export const fetchExpenses = createAsyncThunk(
   'expenses/getExpenses',
   async (_, { getState }) => {
     const { offset, limit } = selectMetaData(getState() as RootState);
-    return await getExpenses(offset, limit);
+    return await expenseApi.getExpenses(offset, limit);
   }
 );
+
+export const updateExpenseComment = createAsyncThunk<
+  Awaited<ReturnType<typeof expenseApi.updateExpenseComment>>,
+  { id: Expense['id']; comment: Expense['comment'] }
+>('expenses/updateExpenseComment', async ({ id, comment }) => {
+  return await expenseApi.updateExpenseComment(id, comment);
+});
 
 const expenseAdapter = createEntityAdapter<Expense>({
   selectId: (expense) => expense.id,
@@ -47,6 +54,12 @@ export const expensesSlice = createSlice({
       expenseAdapter.addMany(state, action.payload.expenses);
       state.total = action.payload.total;
       state.offset = state.offset + state.limit;
+    });
+    builder.addCase(updateExpenseComment.fulfilled, (state, action) => {
+      expenseAdapter.updateOne(state, {
+        id: action.payload.id,
+        changes: { comment: action.payload.comment },
+      });
     });
   },
 });
