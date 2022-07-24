@@ -27,7 +27,7 @@ export const useExpenseList = ({
     return searchKeyword
       ? filterBy(
           expenses,
-          ['user.first', 'user.last', 'merchant'],
+          ['user.first', 'user.last', 'merchant', 'comment'],
           searchKeyword
         )
       : expenses;
