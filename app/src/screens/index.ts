@@ -1,2 +1,3 @@
-export * from './ExpensesScreen'
-export * from './RootStack'
+export * from './ExpenseDetailsScreen';
+export * from './ExpensesScreen';
+export * from './RootStack';

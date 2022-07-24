@@ -1,10 +1,10 @@
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 
-import React from 'react'
+import React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native'
-import { ExpensesScreen, RootStack } from '@screens'
-import { store } from './store'
+import { NavigationContainer } from '@react-navigation/native';
+import { ExpenseDetailsScreen, ExpensesScreen, RootStack } from '@screens';
+import { store } from './store';
 
 const App = () => {
   return (
@@ -12,10 +12,14 @@ const App = () => {
       <NavigationContainer>
         <RootStack.Navigator initialRouteName="Expenses">
           <RootStack.Screen name="Expenses" component={ExpensesScreen} />
+          <RootStack.Screen
+            name="ExpenseDetails"
+            component={ExpenseDetailsScreen}
+          />
         </RootStack.Navigator>
       </NavigationContainer>
     </Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;
