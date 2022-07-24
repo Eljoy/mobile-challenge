@@ -12,6 +12,7 @@ import {
 export declare namespace ExpenseList {
   export type Props = {
     expenses: Expense[];
+    onExpensePressed: (expense: Expense) => void;
   } & Partial<SectionListProps<Expense>>;
 }
 
@@ -25,9 +26,17 @@ const ListSection: React.FC<{ date: string }> = memo(({ date }) => {
   );
 });
 
-const ListItem: React.FC<{ expense: Expense }> = memo(({ expense }) => {
+const ListItem: React.FC<{
+  expense: Expense;
+  onListItemPressed: (expense: Expense) => void;
+}> = memo(({ expense, onListItemPressed }) => {
   return (
-    <TouchableHighlight>
+    <TouchableHighlight
+      underlayColor="gray"
+      onPress={() => {
+        onListItemPressed(expense);
+      }}
+    >
       <Layout
         direction="row"
         align="space-between center"
@@ -46,7 +55,7 @@ const ListItem: React.FC<{ expense: Expense }> = memo(({ expense }) => {
 });
 
 export const ExpenseList: React.FC<ExpenseList.Props> = React.memo(
-  ({ expenses, ...props }) => {
+  ({ expenses, onExpensePressed, ...props }) => {
     const groupedExpenses = useMemo(() => {
       return Object.entries(groupByDate(expenses)).map(
         ([dateKey, expensesValue]) => ({
@@ -62,7 +71,9 @@ export const ExpenseList: React.FC<ExpenseList.Props> = React.memo(
         renderSectionHeader={(info) => (
           <ListSection date={info.section.title} />
         )}
-        renderItem={(info) => <ListItem expense={info.item} />}
+        renderItem={(info) => (
+          <ListItem expense={info.item} onListItemPressed={onExpensePressed} />
+        )}
         scrollEventThrottle={16}
         {...props}
       />
