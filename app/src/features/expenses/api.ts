@@ -22,3 +22,19 @@ export const updateExpenseComment = async (
   });
   return data;
 };
+
+export const uploadExpenseReceipt = async (
+  id: Expense['id'],
+  img: {
+    name: string;
+    uri: string;
+  }
+): Promise<Expense> => {
+  const body = new FormData();
+  body.append('receipt', { ...img, type: 'image/jpeg' });
+  const { data } = await axios.post(
+    `${API_URL}/expenses/${id}/receipts/`,
+    body
+  );
+  return data;
+};

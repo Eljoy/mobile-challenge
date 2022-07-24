@@ -41,6 +41,13 @@ export const updateExpenseComment = createAsyncThunk<
   return await expenseApi.updateExpenseComment(id, comment);
 });
 
+export const uploadExpenseReceipt = createAsyncThunk<
+  Awaited<ReturnType<typeof expenseApi.uploadExpenseReceipt>>,
+  { id: Expense['id']; img: { uri: string; name: string } }
+>('expenses/uploadExpenseReceipt', async ({ id, img }) => {
+  return await expenseApi.uploadExpenseReceipt(id, img);
+});
+
 const expenseAdapter = createEntityAdapter<Expense>({
   selectId: (expense) => expense.id,
 });
@@ -59,6 +66,12 @@ export const expensesSlice = createSlice({
       expenseAdapter.updateOne(state, {
         id: action.payload.id,
         changes: { comment: action.payload.comment },
+      });
+    });
+    builder.addCase(uploadExpenseReceipt.fulfilled, (state, action) => {
+      expenseAdapter.updateOne(state, {
+        id: action.payload.id,
+        changes: { receipts: action.payload.receipts },
       });
     });
   },
