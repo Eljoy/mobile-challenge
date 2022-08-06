@@ -10,18 +10,9 @@ import SwiftUI
 
 struct ExpenseCard: View {
   var expense: Expense
-  var date: String
   
   init(expense: Expense) {
     self.expense = expense
-    let myDateString = "2016-01-01 04:31:32.0"
-    
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.A"
-    let myDate = dateFormatter.date(from: myDateString)!
-    
-    dateFormatter.dateFormat = "MMM dd HH:mm"
-    self.date = dateFormatter.string(from: myDate)
   }
   
   var body: some View {
@@ -38,7 +29,7 @@ struct ExpenseCard: View {
             .foregroundColor(.black)
             .font(.system(size: 14))
         }
-        Text(date)
+        Text(expense.formattedDate)
           .font(.caption)
           .foregroundColor(.gray)
       }

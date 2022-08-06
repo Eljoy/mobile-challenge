@@ -11,7 +11,7 @@ import SwiftUI
 protocol ReceiptPhotoDelegate: AnyObject {
   func onPhotoTaken(imageData: ImageData) -> Void
   func viewDidDisappear() -> Void
-  var expense: Expense { get set }
+  var expense: Expense? { get set }
 }
 
 class ReceiptPhotoViewController: UIViewController {
@@ -19,7 +19,7 @@ class ReceiptPhotoViewController: UIViewController {
   
   lazy var contentView = {
     return UIHostingController(rootView: ReceiptPhotoView(
-      expense: self.delegate!.expense,
+      expense: self.delegate!.expense!,
       onPhotoTaken: self.delegate!.onPhotoTaken))
   }()
   

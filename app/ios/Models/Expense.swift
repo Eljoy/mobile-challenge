@@ -8,11 +8,11 @@
 import Foundation
 
 struct Expense: Codable {
-    let id: String
-    let amount: Amount
-    let date, merchant: String
+  let id: String
+  let amount: Amount
+  let formattedDate, merchant: String
 }
 
 struct Amount: Codable {
-    let value, currency: String
+  let value, currency: String
 }

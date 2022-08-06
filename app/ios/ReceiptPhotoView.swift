@@ -53,7 +53,7 @@ struct ReceiptPhotoView_Previews: PreviewProvider {
     ReceiptPhotoView(expense: Expense(
       id: "1",
       amount: Amount(value: "3.90", currency: "EUR"),
-      date: "Wed Aug 03 2022 23:19:35 GMT+0400",
+      formattedDate: "Wed Aug 03 2022 23:19:35 GMT+0400",
       merchant: "Zwipf"
     ), onPhotoTaken:{ (_) -> Void in })
   }
