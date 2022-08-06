@@ -10,9 +10,11 @@ import Foundation
 @objc(ReceiptCamera)
 class ReceiptCamera: RCTEventEmitter, ReceiptPhotoDelegate {
   var success: RCTPromiseResolveBlock?
+  var viewController: UIViewController?
   
   func onPhotoTaken(imageData: ImageData) {
     self.success?(["fileName": imageData.fileName, "uri": imageData.uri])
+    self.viewController?.dismiss(animated: true)
   }
   
   func photoReceived(_ uri: String) {
@@ -32,6 +34,7 @@ class ReceiptCamera: RCTEventEmitter, ReceiptPhotoDelegate {
     DispatchQueue.main.async {
       let delegate = UIApplication.shared.delegate as? AppDelegate
       let receiptPhotoViewController = ReceiptPhotoViewController()
+      self.viewController = delegate?.rootViewController
       receiptPhotoViewController.delegate = self
       delegate?.rootViewController?.present(receiptPhotoViewController, animated: true)
       self.success = success
