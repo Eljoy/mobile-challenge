@@ -8,8 +8,19 @@
 import UIKit
 import SwiftUI
 
+protocol ReceiptPhotoDelegate: AnyObject {
+  func onPhotoTaken(imageData: ImageData) -> Void
+  var expense: Expense { get set }
+}
+
 class ReceiptPhotoViewController: UIViewController {
-  let contentView = UIHostingController(rootView: ReceiptPhotoView())
+  weak var delegate: ReceiptPhotoDelegate?
+  
+  lazy var contentView = {
+    return UIHostingController(rootView: ReceiptPhotoView(
+      expense: self.delegate!.expense,
+      onPhotoTaken: self.delegate!.onPhotoTaken))
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -41,7 +41,6 @@ struct ExpenseCard: View {
         Text(date)
           .font(.caption)
           .foregroundColor(.gray)
-        
       }
     }
     .scenePadding()
