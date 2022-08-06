@@ -10,6 +10,7 @@ import SwiftUI
 
 protocol ReceiptPhotoDelegate: AnyObject {
   func onPhotoTaken(imageData: ImageData) -> Void
+  func viewDidDisappear() -> Void
   var expense: Expense { get set }
 }
 
@@ -28,6 +29,10 @@ class ReceiptPhotoViewController: UIViewController {
     addChild(contentView)
     view.addSubview(contentView.view)
     setupConstraints()
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    self.delegate?.viewDidDisappear()
   }
   
   fileprivate func setupConstraints() {

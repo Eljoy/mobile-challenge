@@ -11,16 +11,6 @@ import Foundation
 class ReceiptCamera: RCTEventEmitter, ReceiptPhotoDelegate {
   var success: RCTPromiseResolveBlock?
   var viewController: UIViewController?
-  
-  func onPhotoTaken(imageData: ImageData) {
-    self.success?(["fileName": imageData.fileName, "uri": imageData.uri])
-    self.viewController?.dismiss(animated: true)
-  }
-  
-  func photoReceived(_ uri: String) {
-    print(uri)
-  }
-  
   var expense = Expense(
     id: "1",
     amount: Amount(value: "3.90", currency: "EUR"),
@@ -34,11 +24,24 @@ class ReceiptCamera: RCTEventEmitter, ReceiptPhotoDelegate {
     DispatchQueue.main.async {
       let delegate = UIApplication.shared.delegate as? AppDelegate
       let receiptPhotoViewController = ReceiptPhotoViewController()
+      
       self.viewController = delegate?.rootViewController
-      receiptPhotoViewController.delegate = self
-      delegate?.rootViewController?.present(receiptPhotoViewController, animated: true)
       self.success = success
+      
+      receiptPhotoViewController.delegate = self
+      self.viewController?.present(receiptPhotoViewController, animated: true)
+      
     }
+  }
+  
+  func onPhotoTaken(imageData: ImageData) {
+    self.success?(["fileName": imageData.fileName, "uri": imageData.uri])
+    self.success = nil
+    self.viewController?.dismiss(animated: true)
+  }
+  
+  func viewDidDisappear() {
+    self.success?(["fileName": nil, "uri": nil])
   }
   
   override func supportedEvents() -> [String]! {
