@@ -13,7 +13,7 @@ export declare namespace Spacer {
 export const Spacer: React.FC<Spacer.Props> = ({
   heightScale,
   widthScale,
-  flex = 1,
+  flex = 0,
 }) => {
   const styles = [
     heightScale && getHeight(heightScale),
