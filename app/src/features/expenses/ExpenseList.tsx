@@ -1,11 +1,13 @@
 import { Layout } from '@design-system/layout';
+
+import { Avatar, Spacer } from '@design-system/components';
+import { Font, FontColor, Text } from '@design-system/typography';
 import { groupByDate } from '@features/expenses/lib/groupByDate';
 import { Expense } from '@models/Expense';
 import React, { memo, useMemo } from 'react';
 import {
   SectionList,
   SectionListProps,
-  Text,
   TouchableHighlight,
 } from 'react-native';
 
@@ -18,10 +20,10 @@ export declare namespace ExpenseList {
 
 const ListSection: React.FC<{ date: string }> = memo(({ date }) => {
   return (
-    <Layout style={{ paddingVertical: 20 }}>
-      <Layout>
-        <Text>{date}</Text>
-      </Layout>
+    <Layout paddingScale={3}>
+      <Text font={Font.Body2} color={FontColor.Secondary}>
+        {date}
+      </Text>
     </Layout>
   );
 });
@@ -32,22 +34,25 @@ const ListItem: React.FC<{
 }> = memo(({ expense, onListItemPressed }) => {
   return (
     <TouchableHighlight
-      underlayColor="gray"
+      underlayColor="#30353904"
       onPress={() => {
         onListItemPressed(expense);
       }}
     >
-      <Layout
-        direction="row"
-        align="space-between center"
-        style={{ paddingVertical: 20 }}
-      >
-        <Layout>
-          <Text>{expense.merchant}</Text>
-          <Text>{`${expense.user.first} ${expense.user.last}`}</Text>
-        </Layout>
-        <Layout>
-          <Text>{`${expense.amount.value} ${expense.amount.currency}`}</Text>
+      <Layout direction="row" align="center center" flex={1} paddingScale={3}>
+        <Avatar name={expense.merchant} />
+        <Spacer flex={0} widthScale={3} />
+        <Layout flex={1} align="center stretch">
+          <Layout direction="row" align="space-between center">
+            <Text font={Font.Body1}>{expense.merchant}</Text>
+            <Text font={Font.Body2} color={FontColor.Secondary}>
+              {`${expense.amount.value} ${expense.amount.currency}`}
+            </Text>
+          </Layout>
+          <Spacer flex={0} heightScale={1} />
+          <Text font={Font.Caption} color={FontColor.Secondary}>
+            09:40
+          </Text>
         </Layout>
       </Layout>
     </TouchableHighlight>
