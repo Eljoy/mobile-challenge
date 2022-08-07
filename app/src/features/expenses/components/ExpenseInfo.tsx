@@ -23,7 +23,7 @@ export const ExpenseInfo: React.FC<ExpenseInfo.Props> = React.memo(
           </Text>
           <Spacer heightScale={1} />
           <Text font={Font.Caption} color={FontColor.Secondary}>
-            9:40
+            {expense.time}
           </Text>
         </Layout>
       </Layout>

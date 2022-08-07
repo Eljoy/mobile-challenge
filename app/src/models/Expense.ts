@@ -5,8 +5,10 @@ export type Expense = {
   id: string;
   amount: Amount;
   date: string;
+  formattedDate?: string;
+  time?: string;
   merchant: string;
-  receipts: any[];
+  receipts: { url: string }[];
   comment: string;
   category: string;
   user: User;

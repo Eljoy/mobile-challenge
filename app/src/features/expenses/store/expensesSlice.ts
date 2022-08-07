@@ -5,6 +5,7 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit';
+import moment from 'moment';
 import * as expenseApi from '../api';
 
 interface ExpensesState {
@@ -45,7 +46,7 @@ export const uploadExpenseReceipt = createAsyncThunk<
   Awaited<ReturnType<typeof expenseApi.uploadExpenseReceipt>>,
   { id: Expense['id']; img: { uri: string; name: string } }
 >('expenses/uploadExpenseReceipt', async ({ id, img }) => {
-  return await expenseApi.uploadExpenseReceipt(id, img);
+  return expenseApi.uploadExpenseReceipt(id, img);
 });
 
 const expenseAdapter = createEntityAdapter<Expense>({
@@ -58,7 +59,15 @@ export const expensesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchExpenses.fulfilled, (state, action) => {
-      expenseAdapter.addMany(state, action.payload.expenses);
+      const formatted = action.payload.expenses.map((exp) => {
+        const date = moment(exp.date);
+        return {
+          ...exp,
+          formattedDate: date.format('DD MMMM YYYY, HH:mm'),
+          time: date.format('HH:mm'),
+        };
+      });
+      expenseAdapter.addMany(state, formatted);
       state.total = action.payload.total;
       state.offset = state.offset + state.limit;
     });

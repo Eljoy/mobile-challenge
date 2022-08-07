@@ -51,7 +51,7 @@ const ListItem: React.FC<{
           </Layout>
           <Spacer flex={0} heightScale={1} />
           <Text font={Font.Caption} color={FontColor.Secondary}>
-            09:40
+            {expense.time}
           </Text>
         </Layout>
       </Layout>
