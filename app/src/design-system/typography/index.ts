@@ -1,3 +1,2 @@
-export * from './AppText'
-export * from './BodyText'
-export * from './TitleText'
+export * from './Text';
+export { Font, FontColor } from './TokenTypography';
