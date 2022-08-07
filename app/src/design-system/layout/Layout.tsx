@@ -1,14 +1,17 @@
-import React, { ReactNode } from 'react'
-import { StyleProp, View, ViewProps, ViewStyle } from 'react-native'
-import { LayoutAlign, LayoutDirection, LayoutUtils } from './layoutUtils'
+import React, { ReactNode } from 'react';
+import { StyleProp, View, ViewProps, ViewStyle } from 'react-native';
+import { getPadding, getPaddingHorizontal, spaceScale } from '../lib';
+import { LayoutAlign, LayoutDirection, LayoutUtils } from './layoutUtils';
 
 export type LayoutProps = {
-  direction?: LayoutDirection
-  align?: LayoutAlign
-  style?: StyleProp<ViewStyle>
-  children?: ReactNode
+  direction?: LayoutDirection;
+  align?: LayoutAlign;
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
+  paddingScale?: keyof typeof spaceScale;
+  paddingHorizontalScale?: keyof typeof spaceScale;
 } & Pick<ViewStyle, 'flex' | 'height' | 'maxHeight' | 'width' | 'maxWidth'> &
-  ViewProps
+  ViewProps;
 
 // It is my small utility component inspired by angular js layout system,
 // that I did not have time to publish as a standalone library
@@ -21,6 +24,8 @@ export const Layout: React.FC<LayoutProps> = ({
   direction,
   align,
   style,
+  paddingScale,
+  paddingHorizontalScale,
   children,
   ...props
 }) => {
@@ -28,16 +33,18 @@ export const Layout: React.FC<LayoutProps> = ({
     flex && { flex },
     direction && LayoutUtils.toLayoutStyle(direction),
     align && LayoutUtils.toLayoutAlignStyle(align),
+    paddingScale && getPadding(paddingScale),
+    paddingHorizontalScale && getPaddingHorizontal(paddingHorizontalScale),
     height && { height },
     maxHeight && { maxHeight },
     maxWidth && { maxWidth },
     width && { width },
     style,
-  ] as StyleProp<ViewStyle>
+  ] as StyleProp<ViewStyle>;
 
   return (
     <View style={layoutStyle} {...props}>
       {children}
     </View>
-  )
-}
+  );
+};
