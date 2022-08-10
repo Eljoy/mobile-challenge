@@ -34,7 +34,13 @@ export const uploadExpenseReceipt = async (
   body.append('receipt', { ...img, type: 'image/jpeg' });
   const { data } = await axios.post(
     `${API_URL}/expenses/${id}/receipts/`,
-    body
+    body,
+    {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'multipart/form-data',
+      },
+    }
   );
   return data;
 };
