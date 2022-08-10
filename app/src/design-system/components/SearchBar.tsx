@@ -3,7 +3,12 @@ import { spaceScale } from '@design-system/lib';
 import { Font, FontColor, getFontStyle } from '@design-system/typography';
 import { debounce } from 'lodash';
 import React, { useRef, useState } from 'react';
-import { StyleSheet, TextInput, TextInputProps } from 'react-native';
+import {
+  StyleSheet,
+  TextInput,
+  TextInputProps,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import normalize from 'react-native-normalize';
 import Icon from 'react-native-vector-icons/Feather';
 
@@ -15,6 +20,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   onSearchKeywordChanged,
   ...props
 }) => {
+  const textInputRef = useRef<TextInput>();
+
   const [searchKeyword, setSearchKeyword] = useState('');
   const _onSearchKeywordChanged = useRef(debounce(onSearchKeywordChanged, 300));
   const onChangeText = (text: string) => {
@@ -23,24 +30,35 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   return (
-    <Layout
-      style={styles.container}
-      direction="row"
-      marginScale={3}
-      align="start center"
-      paddingScale={2}
+    <TouchableWithoutFeedback
+      onPress={() => {
+        textInputRef.current?.focus();
+      }}
     >
-      <Icon name="search" size={normalize(16)} color={FontColor.Secondary} />
-      <TextInput
-        value={searchKeyword}
-        onChangeText={onChangeText}
-        autoCorrect={false}
-        placeholder="Search..."
-        selectionColor={FontColor.Primary}
-        style={[styles.textInput, getFontStyle(Font.Body2, FontColor.Primary)]}
-        {...props}
-      />
-    </Layout>
+      <Layout
+        style={styles.container}
+        direction="row"
+        marginScale={3}
+        align="start center"
+        paddingScale={2}
+      >
+        <Icon name="search" size={normalize(16)} color={FontColor.Secondary} />
+        <TextInput
+          ref={textInputRef as React.LegacyRef<TextInput>}
+          value={searchKeyword}
+          onChangeText={onChangeText}
+          autoCorrect={false}
+          placeholder="Search..."
+          placeholderTextColor={FontColor.Secondary}
+          selectionColor={FontColor.Primary}
+          style={[
+            styles.textInput,
+            getFontStyle(Font.Body2, FontColor.Primary),
+          ]}
+          {...props}
+        />
+      </Layout>
+    </TouchableWithoutFeedback>
   );
 };
 
