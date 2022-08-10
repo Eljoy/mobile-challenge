@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.mobilechallenge.components.Avatar
 import com.mobilechallenge.models.Amount
 import com.mobilechallenge.models.Expense
@@ -57,13 +58,16 @@ fun ReceiptCameraView(
             .fillMaxWidth(),
           horizontalArrangement = Arrangement.SpaceBetween
         ) {
-          Row {
+          Row(verticalAlignment = Alignment.CenterVertically) {
             Avatar(name = expense.merchant)
-            Column(modifier = Modifier.padding(start = 10.dp, end = 10.dp)) {
-              Text(text = expense.merchant)
+            Column(modifier = Modifier.padding(start = 20.dp, end = 10.dp),
+              verticalArrangement = Arrangement.Center) {
+              Text(text = expense.merchant, fontSize = 15.sp, lineHeight = 16.sp, color = Color.Black)
+              Spacer(modifier = Modifier.height(1.dp))
+              Text(text = expense.formattedDate, fontSize = 13.sp, color = Color.LightGray)
             }
           }
-          Text(text = expense.amount.value + expense.amount.currency)
+          Text(text = expense.amount.value + expense.amount.currency, color = Color.Black, fontSize = 15.sp)
         }
       }
     }
@@ -80,7 +84,7 @@ fun ReceiptCameraView_Preview() {
     id = "0",
     merchant = "Starbucks",
     amount = amount,
-    date = "Sun Jul 31 2022 23:39:24 GMT+0400 (Armenia Standard Time)"
+    formattedDate = "Jul 31 2022 23:39:24"
   )
 
   ReceiptCameraView(

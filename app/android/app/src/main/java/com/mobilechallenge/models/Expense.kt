@@ -5,6 +5,6 @@ data class Amount(val value: String, val currency: String)
 data class Expense(
   val id: String,
   val amount: Amount,
-  val date: String,
+  val formattedDate: String,
   val merchant: String,
 )
