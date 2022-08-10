@@ -53,10 +53,11 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
   func savePic(imageData: UIImage) -> ImageData {
     let data = imageData.jpegData(compressionQuality: 0.75);
     
-    let uniqueString = ProcessInfo.processInfo.globallyUniqueString
+    let uniqueString = UUID().uuidString
     
-    let url = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
-      .appendingPathComponent(uniqueString, isDirectory: false)
+    let url = URL(fileURLWithPath: NSTemporaryDirectory())
+      .standardized
+      .appendingPathComponent(uniqueString)
       .appendingPathExtension("jpg")
     
     try? data!.write(to: url)
