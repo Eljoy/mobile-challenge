@@ -1,3 +1,4 @@
+import { Icon } from '@design-system/components';
 import { Layout } from '@design-system/layout/Layout';
 import { spaceScale } from '@design-system/lib';
 import { Font, FontColor, getFontStyle } from '@design-system/typography';
@@ -10,7 +11,6 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import normalize from 'react-native-normalize';
-import Icon from 'react-native-vector-icons/Feather';
 
 export type SearchBarProps = {
   onSearchKeywordChanged: (keyWord: string) => void;
@@ -42,7 +42,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         align="start center"
         paddingScale={2}
       >
-        <Icon name="search" size={normalize(16)} color={FontColor.Secondary} />
+        <Icon name="search" />
         <TextInput
           ref={textInputRef as React.LegacyRef<TextInput>}
           value={searchKeyword}

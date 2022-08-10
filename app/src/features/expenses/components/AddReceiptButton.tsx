@@ -1,4 +1,4 @@
-import { FontColor } from '@design-system/typography';
+import { Icon } from '@design-system/components';
 import React from 'react';
 import {
   StyleSheet,
@@ -6,7 +6,6 @@ import {
   TouchableHighlightProps,
 } from 'react-native';
 import normalize from 'react-native-normalize';
-import Icon from 'react-native-vector-icons/Feather';
 
 export declare namespace AddReceiptButton {
   export type Props = {} & TouchableHighlightProps;
@@ -19,7 +18,7 @@ export const AddReceiptButton: React.FC<AddReceiptButton.Props> = (props) => {
       style={styles.container}
       {...props}
     >
-      <Icon name="plus" size={24} color={FontColor.Secondary} />
+      <Icon name="plus" />
     </TouchableHighlight>
   );
 };
