@@ -32,4 +32,23 @@ describe('expenses/api', () => {
     const result = await updateExpenseComment(expense.id, expense.comment);
     expect(result).toEqual(expense);
   });
+
+  test('uploadExpenseReceipt', async () => {
+    const expense = generateExpense();
+    mock.onPost(new RegExp('expenses', 'i')).reply((config) => {
+      const { url, headers } = config;
+      expect(url?.includes(expense.id)).toBeTruthy();
+      expect(headers).toEqual({
+        Accept: 'application/json',
+        'Content-Type': 'multipart/form-data',
+      });
+      return [200, expense];
+    });
+    const { uploadExpenseReceipt } = require('@features/expenses/api');
+    const result = await uploadExpenseReceipt(expense.id, {
+      url: 'url',
+      name: 'name',
+    });
+    expect(result).toEqual(expense);
+  });
 });
