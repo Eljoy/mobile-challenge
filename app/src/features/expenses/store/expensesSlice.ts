@@ -13,11 +13,9 @@ interface ExpensesState {
   total?: number;
   limit: number;
   offset: number;
-  loading: 'idle' | 'pending' | 'succeeded' | 'failed';
 }
 
 const initialState = {
-  loading: 'idle',
   limit: 25,
   offset: 0,
 } as ExpensesState;
