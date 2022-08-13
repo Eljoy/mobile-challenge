@@ -3,7 +3,11 @@ import { Layout } from '@design-system/layout';
 import { Font, FontColor, Text } from '@design-system/typography';
 import { groupByDate } from '@features/expenses/lib/groupByDate';
 import { Expense } from '@models/Expense';
-import { FlashList, FlashListProps, ListRenderItem } from '@shopify/flash-list';
+import {
+  FlashList,
+  FlashListProps,
+  ListRenderItemInfo,
+} from '@shopify/flash-list';
 import React, { memo, useCallback, useMemo } from 'react';
 import { TouchableHighlight } from 'react-native';
 
@@ -37,7 +41,7 @@ const ListItem: React.FC<{
     >
       <Layout direction="row" align="center center" flex={1} paddingScale={3}>
         <Avatar name={expense.merchant} />
-        <Spacer flex={0} widthScale={3} />
+        <Spacer widthScale={3} />
         <Layout flex={1} align="center stretch">
           <Layout direction="row" align="space-between center">
             <Text font={Font.Body1}>{expense.merchant}</Text>
@@ -45,7 +49,7 @@ const ListItem: React.FC<{
               {`${expense.amount.value} ${expense.amount.currency}`}
             </Text>
           </Layout>
-          <Spacer flex={0} heightScale={1} />
+          <Spacer heightScale={1} />
           <Text font={Font.Caption} color={FontColor.Secondary}>
             {expense.time}
           </Text>
@@ -58,12 +62,12 @@ const ListItem: React.FC<{
 export const ExpenseList: React.FC<ExpenseList.Props> = React.memo(
   ({ expenses, onExpensePressed, ...props }) => {
     const expenseData = useMemo(
-      () => Object.entries(groupByDate(expenses)).flat(2),
+      () => Object.entries(groupByDate(expenses, 'DD MMMM YYYY')).flat(2),
       [expenses]
     );
 
-    const renderItem: ListRenderItem<Expense | string> = useCallback(
-      (info: any) =>
+    const renderItem = useCallback(
+      (info: ListRenderItemInfo<Expense | string>) =>
         typeof info.item === 'string' ? (
           <ListSection date={info.item} />
         ) : (

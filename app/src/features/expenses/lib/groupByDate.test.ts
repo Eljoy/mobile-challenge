@@ -1,57 +1,34 @@
-import { EXPENSES_DATE_FORMAT } from '@common'
-import { Expense } from '@models/Expense'
-import moment from 'moment'
-import { groupByDate } from './groupByDate'
+import { Expense } from '@models/Expense';
+import { generateExpense } from '@models/__test-utils__/generateExpense';
+import moment from 'moment';
+import { groupByDate } from './groupByDate';
 
-const expense: Expense = {
-  index: 0,
-  id: '5b995dff2e3cb74644948a66',
-  amount: {
-    value: '2149.29',
-    currency: 'GBP',
-  },
-  date: '2017-06-21T08:45:09.326Z',
-  merchant: 'QUONK',
-  receipts: [],
-  comment: '',
-  category: '',
-  user: {
-    first: 'Atkins',
-    last: 'Blackburn',
-    email: 'atkins.blackburn@pleo.io',
-  },
-}
+const DATE_FORMAT = 'DD MMMM YYYY';
 
 describe('groupByDate', () => {
-  const today = moment()
-  const yesterday = moment().add(-1, 'day')
-  const otherDate = moment().add(-4, 'day')
+  const today = moment();
+  const yesterday = moment().add(-1, 'day');
+  const otherDate = moment().add(-4, 'day');
+  const todayData = [today.toISOString(), today.toISOString()].map((date) =>
+    generateExpense({ date })
+  );
 
-  const todayData = [today.toISOString(), today.toISOString()].map((date) => ({
-    ...expense,
-    date,
-  }))
-
-  const yesterdayData: Expense[] = [yesterday.toISOString()].map((date) => ({
-    ...expense,
-    date,
-  }))
+  const yesterdayData: Expense[] = [yesterday.toISOString()].map((date) =>
+    generateExpense({ date })
+  );
 
   const otherDateData = [
     otherDate.toISOString(),
     otherDate.toISOString(),
     otherDate.toISOString(),
-  ].map((date) => ({
-    ...expense,
-    date,
-  }))
+  ].map((date) => generateExpense({ date }));
 
   test('groupByDate', () => {
-    const data: Expense[] = [...todayData, ...yesterdayData, ...otherDateData]
-    expect(groupByDate(data)).toEqual({
+    const data: Expense[] = [...todayData, ...yesterdayData, ...otherDateData];
+    expect(groupByDate(data, DATE_FORMAT)).toEqual({
       today: todayData,
       yesterday: yesterdayData,
-      [otherDate.format(EXPENSES_DATE_FORMAT)]: otherDateData,
-    })
-  })
-})
+      [otherDate.format(DATE_FORMAT)]: otherDateData,
+    });
+  });
+});

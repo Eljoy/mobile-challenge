@@ -1,1 +1,0 @@
-export const EXPENSES_DATE_FORMAT = 'DD MM YY'
