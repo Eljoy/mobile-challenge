@@ -1,6 +1,11 @@
 import React, { ReactNode } from 'react';
 import { StyleProp, View, ViewProps, ViewStyle } from 'react-native';
-import { getPadding, getPaddingHorizontal, spaceScale } from '../lib';
+import {
+  getMargin,
+  getPadding,
+  getPaddingHorizontal,
+  spaceScale,
+} from '../lib';
 import { LayoutAlign, LayoutDirection, LayoutUtils } from './layoutUtils';
 
 export type LayoutProps = {
@@ -9,6 +14,7 @@ export type LayoutProps = {
   style?: StyleProp<ViewStyle>;
   children?: ReactNode;
   paddingScale?: keyof typeof spaceScale;
+  marginScale?: keyof typeof spaceScale;
   paddingHorizontalScale?: keyof typeof spaceScale;
 } & Pick<ViewStyle, 'flex' | 'height' | 'maxHeight' | 'width' | 'maxWidth'> &
   ViewProps;
@@ -27,12 +33,14 @@ export const Layout: React.FC<LayoutProps> = ({
   paddingScale,
   paddingHorizontalScale,
   children,
+  marginScale,
   ...props
 }) => {
   const layoutStyle = [
     flex && { flex },
     direction && LayoutUtils.toLayoutStyle(direction),
     align && LayoutUtils.toLayoutAlignStyle(align),
+    marginScale && getMargin(marginScale),
     paddingScale && getPadding(paddingScale),
     paddingHorizontalScale && getPaddingHorizontal(paddingHorizontalScale),
     height && { height },
