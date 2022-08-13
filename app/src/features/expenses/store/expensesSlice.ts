@@ -5,7 +5,6 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit';
-import moment from 'moment';
 import * as expenseApi from '../api';
 
 interface ExpensesState {
@@ -57,15 +56,7 @@ export const expensesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchExpenses.fulfilled, (state, action) => {
-      const formatted = action.payload.expenses.map((exp) => {
-        const date = moment(exp.date);
-        return {
-          ...exp,
-          formattedDate: date.format('DD MMMM YYYY, HH:mm'),
-          time: date.format('HH:mm'),
-        };
-      });
-      expenseAdapter.addMany(state, formatted);
+      expenseAdapter.addMany(state, action.payload.expenses);
       state.total = action.payload.total;
       state.offset = state.offset + state.limit;
     });

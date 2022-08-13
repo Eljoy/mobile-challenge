@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) => {
-    const middlewares = getDefaultMiddleware().concat();
+    const middlewares = getDefaultMiddleware();
     if (__DEV__) {
       const createDebugger = require('redux-flipper').default;
       middlewares.push(createDebugger());

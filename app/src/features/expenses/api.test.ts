@@ -1,3 +1,4 @@
+import { deserializeExpense } from '@models/Expense';
 import { generateExpense } from '@models/__test-utils__/generateExpense';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
@@ -10,7 +11,9 @@ describe('expenses/api', () => {
   });
 
   test('getExpenses', async () => {
-    const expenses = Array.from({ length: 10 }).map(() => generateExpense());
+    const expenses = Array.from({ length: 10 }).map(() =>
+      deserializeExpense(generateExpense())
+    );
     mock.onGet(new RegExp('expenses', 'i')).reply(200, {
       expenses,
       total: expenses.length,
@@ -30,7 +33,7 @@ describe('expenses/api', () => {
     });
     const { updateExpenseComment } = require('@features/expenses/api');
     const result = await updateExpenseComment(expense.id, expense.comment);
-    expect(result).toEqual(expense);
+    expect(result).toEqual(deserializeExpense(expense));
   });
 
   test('uploadExpenseReceipt', async () => {
@@ -49,6 +52,6 @@ describe('expenses/api', () => {
       url: 'url',
       name: 'name',
     });
-    expect(result).toEqual(expense);
+    expect(result).toEqual(deserializeExpense(expense));
   });
 });
