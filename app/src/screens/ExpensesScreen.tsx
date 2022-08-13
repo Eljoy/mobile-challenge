@@ -1,7 +1,7 @@
 import { SearchBar } from '@design-system/components';
 import { Layout } from '@design-system/layout/Layout';
 import { ExpenseList } from '@features/expenses';
-import { useExpenseList } from '@features/expenses/useExpenseList';
+import { useExpenseList } from '@features/expenses/hooks/useExpenseList';
 import { Expense } from '@models/Expense';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useCallback, useState } from 'react';

@@ -4,8 +4,8 @@ import {
   EditReceipts,
   ExpenseInfo,
   PaidBy,
+  useExpense,
 } from '@features/expenses';
-import { useExpense } from '@features/expenses/useExpense';
 import { Expense } from '@models/Expense';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 

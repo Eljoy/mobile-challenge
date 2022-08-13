@@ -1,3 +1,4 @@
 export * from './components';
-export * from './ExpenseList';
+export * from './components/ExpenseList';
+export * from './hooks';
 export * from './store';

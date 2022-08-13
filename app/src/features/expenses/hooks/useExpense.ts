@@ -7,7 +7,7 @@ import {
   expenseSelectors,
   updateExpenseComment as updateExpenseCommentAction,
   uploadExpenseReceipt as uploadExpenseReceiptAction,
-} from './store';
+} from '../store';
 
 export const useExpense = (expenseId: Expense['id']) => {
   const dispatch = useDispatch();
