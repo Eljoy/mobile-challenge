@@ -14,14 +14,14 @@ export declare namespace useExpenseList {
 }
 
 export const useExpenseList = ({
-  searchKeyword = '',
+  searchKeyword,
 }: useExpenseList.Props = {}) => {
   const dispatch = useDispatch();
   const expenses = useSelector(expenseSelectors.selectAll);
 
   const triggerNext = useCallback(() => {
     dispatch(fetchExpenses() as unknown as AnyAction);
-  }, []);
+  }, [dispatch]);
 
   const filteredExpenses = useMemo(() => {
     return searchKeyword
