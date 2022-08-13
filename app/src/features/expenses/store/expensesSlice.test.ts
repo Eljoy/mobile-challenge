@@ -16,19 +16,23 @@ const store = configureStore({
 });
 
 describe('expensesStore', () => {
-  test('initialState', () => {
+  test('getExpenses', async () => {
     const expensesResult = {
       expenses: Array.from({ length: 5 }).map(() => generateExpense()),
       total: 10,
     };
 
-    const initialExpenses = expenseSelectors.selectAll(store.getState());
-    expect(initialExpenses).toEqual([]);
-
     jest
       .spyOn(api, 'getExpenses')
       .mockReturnValue(Promise.resolve(expensesResult));
 
-    store.dispatch(fetchExpenses());
+    const initialExpenses = expenseSelectors.selectAll(store.getState());
+    expect(initialExpenses).toEqual([]);
+
+    const fulfilled = await fetchExpenses()(store.dispatch, store.getState, {});
+    store.dispatch(fulfilled);
+
+    const resultExpenses = expenseSelectors.selectAll(store.getState());
+    expect(resultExpenses).toEqual(expensesResult.expenses);
   });
 });
