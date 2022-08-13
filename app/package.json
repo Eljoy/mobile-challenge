@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "mkenv": "cd ./scripts && sh env.sh ../src/.env",
+    "postinstall": "npm run mkenv"
   },
   "dependencies": {
     "@faker-js/faker": "^7.3.0",
@@ -52,7 +54,7 @@
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "^26.6.3",
-    "eslint": "^7.32.0",
+    "eslint": "^8.21.0",
     "eslint-plugin-react": "^7.30.1",
     "husky": "^4.3.7",
     "jest": "^26.6.3",
