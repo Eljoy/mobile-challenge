@@ -12,6 +12,7 @@ module.exports = {
   setupFilesAfterEnv: [
     '@testing-library/jest-native/extend-expect',
     './jest.setup.js',
+    '@testing-library/jest-native/extend-expect',
   ],
 
   moduleNameMapper: {
@@ -29,7 +30,7 @@ module.exports = {
     '^.+\\.[jt]sx?$': 'babel-jest',
   },
 
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
 
   testMatch: ['**/*.test.ts?(x)'],
 
