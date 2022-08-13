@@ -24,15 +24,13 @@
 		ED81BF7E289681D700D7C41D /* ReceiptPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81BF7C289681D700D7C41D /* ReceiptPhotoView.swift */; };
 		ED81BF8028968B4800D7C41D /* ReceiptPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81BF7F28968B4800D7C41D /* ReceiptPhotoViewController.swift */; };
 		ED81BF8128968B4800D7C41D /* ReceiptPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81BF7F28968B4800D7C41D /* ReceiptPhotoViewController.swift */; };
-		ED85D3162895B1EC00C75806 /* ReceiptImageModule.m in Sources */ = {isa = PBXBuildFile; fileRef = ED85D3152895B1EC00C75806 /* ReceiptImageModule.m */; };
-		EDB6DD9D289D9AAE0046A15A /* ReceiptImageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6DD9C289D9AAE0046A15A /* ReceiptImageModule.swift */; };
+		ED85D3162895B1EC00C75806 /* ReceiptPhotoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = ED85D3152895B1EC00C75806 /* ReceiptPhotoModule.m */; };
+		EDB6DD9D289D9AAE0046A15A /* ReceiptPhotoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6DD9C289D9AAE0046A15A /* ReceiptPhotoModule.swift */; };
 		EDB6DD9F289EDD1D0046A15A /* CameraPhotoProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6DD9E289EDD1D0046A15A /* CameraPhotoProcessor.swift */; };
 		EDBCA7B9289859B2006C69BD /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCA7B7289859B2006C69BD /* CameraPreview.swift */; };
 		EDBCA7BA289859B2006C69BD /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCA7B7289859B2006C69BD /* CameraPreview.swift */; };
 		EDBCA7BB289859B2006C69BD /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCA7B8289859B2006C69BD /* CameraModel.swift */; };
 		EDBCA7BC289859B2006C69BD /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCA7B8289859B2006C69BD /* CameraModel.swift */; };
-		EDBCA7BE28991ECE006C69BD /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCA7BD28991ECE006C69BD /* temp.swift */; };
-		EDBCA7BF28991ECE006C69BD /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCA7BD28991ECE006C69BD /* temp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,13 +69,12 @@
 		ED309F29289B0A780025DB79 /* ExpenseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCard.swift; sourceTree = "<group>"; };
 		ED81BF7C289681D700D7C41D /* ReceiptPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPhotoView.swift; sourceTree = "<group>"; };
 		ED81BF7F28968B4800D7C41D /* ReceiptPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPhotoViewController.swift; sourceTree = "<group>"; };
-		ED85D3122895B09E00C75806 /* ReceiptImageModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReceiptImageModule-Bridging-Header.h"; sourceTree = "<group>"; };
-		ED85D3152895B1EC00C75806 /* ReceiptImageModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptImageModule.m; sourceTree = "<group>"; };
-		EDB6DD9C289D9AAE0046A15A /* ReceiptImageModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptImageModule.swift; sourceTree = "<group>"; };
+		ED85D3122895B09E00C75806 /* ReceiptPhotoModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReceiptPhotoModule-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED85D3152895B1EC00C75806 /* ReceiptPhotoModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptPhotoModule.m; sourceTree = "<group>"; };
+		EDB6DD9C289D9AAE0046A15A /* ReceiptPhotoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptPhotoModule.swift; sourceTree = "<group>"; };
 		EDB6DD9E289EDD1D0046A15A /* CameraPhotoProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPhotoProcessor.swift; sourceTree = "<group>"; };
 		EDBCA7B7289859B2006C69BD /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		EDBCA7B8289859B2006C69BD /* CameraModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
-		EDBCA7BD28991ECE006C69BD /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +122,7 @@
 				ED309F23289B09630025DB79 /* Models */,
 				ED309F1E289B08D90025DB79 /* Extensions */,
 				EDBCA7B6289859B2006C69BD /* Camera */,
-				ED85D3112895B04F00C75806 /* ReceiptImageModule */,
+				ED85D3112895B04F00C75806 /* ReceiptPhotoModule */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -134,7 +131,6 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				ED81BF7C289681D700D7C41D /* ReceiptPhotoView.swift */,
 				ED81BF7F28968B4800D7C41D /* ReceiptPhotoViewController.swift */,
-				EDBCA7BD28991ECE006C69BD /* temp.swift */,
 				ED309F29289B0A780025DB79 /* ExpenseCard.swift */,
 			);
 			name = MobileChallenge;
@@ -225,14 +221,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		ED85D3112895B04F00C75806 /* ReceiptImageModule */ = {
+		ED85D3112895B04F00C75806 /* ReceiptPhotoModule */ = {
 			isa = PBXGroup;
 			children = (
-				EDB6DD9C289D9AAE0046A15A /* ReceiptImageModule.swift */,
-				ED85D3122895B09E00C75806 /* ReceiptImageModule-Bridging-Header.h */,
-				ED85D3152895B1EC00C75806 /* ReceiptImageModule.m */,
+				EDB6DD9C289D9AAE0046A15A /* ReceiptPhotoModule.swift */,
+				ED85D3122895B09E00C75806 /* ReceiptPhotoModule-Bridging-Header.h */,
+				ED85D3152895B1EC00C75806 /* ReceiptPhotoModule.m */,
 			);
-			path = ReceiptImageModule;
+			path = ReceiptPhotoModule;
 			sourceTree = "<group>";
 		};
 		EDBCA7B6289859B2006C69BD /* Camera */ = {
@@ -508,7 +504,6 @@
 				EDBCA7BC289859B2006C69BD /* CameraModel.swift in Sources */,
 				ED81BF7E289681D700D7C41D /* ReceiptPhotoView.swift in Sources */,
 				00E356F31AD99517003FC87E /* MobileChallengeTests.m in Sources */,
-				EDBCA7BF28991ECE006C69BD /* temp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,14 +517,13 @@
 				ED309F22289B09380025DB79 /* Color.swift in Sources */,
 				ED309F20289B090A0025DB79 /* View.swift in Sources */,
 				EDB6DD9F289EDD1D0046A15A /* CameraPhotoProcessor.swift in Sources */,
-				EDBCA7BE28991ECE006C69BD /* temp.swift in Sources */,
-				ED85D3162895B1EC00C75806 /* ReceiptImageModule.m in Sources */,
+				ED85D3162895B1EC00C75806 /* ReceiptPhotoModule.m in Sources */,
 				EDBCA7B9289859B2006C69BD /* CameraPreview.swift in Sources */,
 				ED309F28289B09B30025DB79 /* Avatar.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				EDBCA7BB289859B2006C69BD /* CameraModel.swift in Sources */,
-				EDB6DD9D289D9AAE0046A15A /* ReceiptImageModule.swift in Sources */,
+				EDB6DD9D289D9AAE0046A15A /* ReceiptPhotoModule.swift in Sources */,
 				ED309F2A289B0A780025DB79 /* ExpenseCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,7 +624,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MobileChallenge;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReceiptImageModule/ReceiptImageModule-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReceiptPhotoModule/ReceiptPhotoModule-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -661,7 +655,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MobileChallenge;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReceiptImageModule/ReceiptImageModule-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReceiptPhotoModule/ReceiptPhotoModule-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
