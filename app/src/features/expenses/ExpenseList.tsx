@@ -1,21 +1,17 @@
-import { Layout } from '@design-system/layout';
-
 import { Avatar, Spacer } from '@design-system/components';
+import { Layout } from '@design-system/layout';
 import { Font, FontColor, Text } from '@design-system/typography';
 import { groupByDate } from '@features/expenses/lib/groupByDate';
 import { Expense } from '@models/Expense';
-import React, { memo, useMemo } from 'react';
-import {
-  SectionList,
-  SectionListProps,
-  TouchableHighlight,
-} from 'react-native';
+import { FlashList, FlashListProps, ListRenderItem } from '@shopify/flash-list';
+import React, { memo, useCallback, useMemo } from 'react';
+import { TouchableHighlight } from 'react-native';
 
 export declare namespace ExpenseList {
   export type Props = {
     expenses: Expense[];
     onExpensePressed: (expense: Expense) => void;
-  } & Partial<SectionListProps<Expense>>;
+  } & Partial<FlashListProps<Expense>>;
 }
 
 const ListSection: React.FC<{ date: string }> = memo(({ date }) => {
@@ -61,24 +57,25 @@ const ListItem: React.FC<{
 
 export const ExpenseList: React.FC<ExpenseList.Props> = React.memo(
   ({ expenses, onExpensePressed, ...props }) => {
-    const groupedExpenses = useMemo(() => {
-      return Object.entries(groupByDate(expenses)).map(
-        ([dateKey, expensesValue]) => ({
-          title: dateKey,
-          data: expensesValue,
-        })
-      );
-    }, [expenses]);
+    const expenseData = useMemo(
+      () => Object.entries(groupByDate(expenses)).flat(2),
+      [expenses]
+    );
+
+    const renderItem: ListRenderItem<Expense | string> = useCallback(
+      (info: any) =>
+        typeof info.item === 'string' ? (
+          <ListSection date={info.item} />
+        ) : (
+          <ListItem expense={info.item} onListItemPressed={onExpensePressed} />
+        ),
+      [onExpensePressed]
+    );
 
     return (
-      <SectionList
-        sections={groupedExpenses}
-        renderSectionHeader={(info) => (
-          <ListSection date={info.section.title} />
-        )}
-        renderItem={(info) => (
-          <ListItem expense={info.item} onListItemPressed={onExpensePressed} />
-        )}
+      <FlashList
+        data={expenseData as any}
+        renderItem={renderItem}
         scrollEventThrottle={16}
         {...props}
       />
