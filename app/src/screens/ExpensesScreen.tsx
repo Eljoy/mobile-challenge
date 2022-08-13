@@ -5,7 +5,6 @@ import { useExpenseList } from '@features/expenses/useExpenseList';
 import { Expense } from '@models/Expense';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useCallback, useState } from 'react';
-import { StyleSheet } from 'react-native';
 import { RootStackParamList } from './RootStack';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Expenses'>;
@@ -22,7 +21,7 @@ export const ExpensesScreen: React.FC<Props> = ({ navigation }) => {
   );
 
   return (
-    <Layout style={styles.container}>
+    <Layout flex={1}>
       <SearchBar onSearchKeywordChanged={setSearchKeyword} />
       <ExpenseList
         expenses={expenses}
@@ -32,9 +31,3 @@ export const ExpensesScreen: React.FC<Props> = ({ navigation }) => {
     </Layout>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-  },
-});

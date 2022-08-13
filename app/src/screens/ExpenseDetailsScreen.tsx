@@ -10,7 +10,6 @@ import { Expense } from '@models/Expense';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import React, { useCallback } from 'react';
-import { StyleSheet } from 'react-native';
 import { RootStackParamList } from './RootStack';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ExpenseDetails'>;
@@ -28,7 +27,7 @@ export const ExpenseDetailsScreen: React.FC<Props> = ({ route }) => {
   );
 
   return (
-    <Layout flex={1} style={styles.container}>
+    <Layout>
       <ExpenseInfo expense={expense} />
       <PaidBy user={expense.user} />
       <EditExpenseComment
@@ -39,9 +38,3 @@ export const ExpenseDetailsScreen: React.FC<Props> = ({ route }) => {
     </Layout>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-  },
-});
