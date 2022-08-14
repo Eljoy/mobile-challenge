@@ -44,7 +44,9 @@ export const EditTextFieldScreen: React.FC<Props> = ({ route, navigation }) => {
   }, [navigation, onCancel, onSubmit, text, value]);
 
   useEffect(() => {
-    textInputRef.current?.focus();
+    setTimeout(() => {
+      textInputRef.current?.focus();
+    });
   }, []);
 
   return (
