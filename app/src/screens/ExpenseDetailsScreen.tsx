@@ -19,7 +19,7 @@ export const ExpenseDetailsScreen: React.FC<Props> = ({
   navigation,
 }) => {
   const { expenseId } = route.params;
-  const { updateExpenseComment, expense, addReceiptPhoto } =
+  const { updateExpenseComment, expense, addReceiptPhoto, maxNumberOfReceipt } =
     useExpense(expenseId);
 
   const onSubmitComment = useCallback(
@@ -44,7 +44,11 @@ export const ExpenseDetailsScreen: React.FC<Props> = ({
         comment={expense.comment}
         onPress={onPressEditComment}
       />
-      <EditReceipts expense={expense} onAddReceiptPhoto={addReceiptPhoto} />
+      <EditReceipts
+        expense={expense}
+        onAddReceiptPhoto={addReceiptPhoto}
+        maxNumberOfReceipts={maxNumberOfReceipt}
+      />
     </Layout>
   );
 };
