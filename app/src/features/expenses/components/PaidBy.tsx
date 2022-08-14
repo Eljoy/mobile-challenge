@@ -15,7 +15,7 @@ export const PaidBy: React.FC<PaidBy.Props> = ({ user }) => {
     <Layout paddingHorizontalScale={3} direction="row" align="start center">
       <Icon name="user" />
       <Spacer widthScale={2} />
-      <Text font={Font.Body2} color={FontColor.Primary}>
+      <Text font={Font.Body1} color={FontColor.Primary}>
         {`${user.first} ${user.last}`}
       </Text>
     </Layout>

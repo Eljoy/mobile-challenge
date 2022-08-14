@@ -1,4 +1,5 @@
 import { Icon } from '@design-system/components';
+import { Layout } from '@design-system/layout/Layout';
 import { Colors } from '@design-system/theme';
 import React from 'react';
 import {
@@ -14,23 +15,27 @@ export declare namespace AddReceiptButton {
 
 export const AddReceiptButton: React.FC<AddReceiptButton.Props> = (props) => {
   return (
-    <TouchableHighlight
-      underlayColor={Colors.underlay}
-      style={styles.container}
-      {...props}
-    >
-      <Icon name="plus" />
-    </TouchableHighlight>
+    <Layout style={styles.container}>
+      <TouchableHighlight
+        underlayColor={Colors.underlay}
+        style={styles.touchable}
+        {...props}
+      >
+        <Icon name="plus" />
+      </TouchableHighlight>
+    </Layout>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    borderWidth: normalize(1),
+    borderRadius: normalize(16),
+    borderColor: Colors.secondaryGrey,
+  },
+  touchable: {
     width: normalize(65),
     height: normalize(65),
-    borderRadius: normalize(12),
-    borderWidth: normalize(1),
-    borderColor: '#A2A1B4',
     justifyContent: 'center',
     alignItems: 'center',
   },

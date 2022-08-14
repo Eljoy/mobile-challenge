@@ -4,7 +4,12 @@ import React from 'react';
 
 import { Colors } from '@design-system/theme';
 import { NavigationContainer } from '@react-navigation/native';
-import { ExpenseDetailsScreen, ExpensesScreen, RootStack } from '@screens';
+import {
+  EditTextFieldScreen,
+  ExpenseDetailsScreen,
+  ExpensesScreen,
+  RootStack,
+} from '@screens';
 import { StatusBar, StyleSheet } from 'react-native';
 import { store } from './store';
 
@@ -19,13 +24,18 @@ const App = () => {
             headerStyle: styles.header,
             contentStyle: styles.content,
             headerBackTitleVisible: false,
-            headerTintColor: 'white',
+            headerTintColor: Colors.white,
           }}
         >
           <RootStack.Screen name="Expenses" component={ExpensesScreen} />
           <RootStack.Screen
             name="ExpenseDetails"
             component={ExpenseDetailsScreen}
+          />
+          <RootStack.Screen
+            options={{ presentation: 'fullScreenModal' }}
+            name="EditTextField"
+            component={EditTextFieldScreen}
           />
         </RootStack.Navigator>
       </NavigationContainer>

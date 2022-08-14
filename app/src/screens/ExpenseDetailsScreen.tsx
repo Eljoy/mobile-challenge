@@ -1,6 +1,6 @@
 import { Layout } from '@design-system/layout/Layout';
 import {
-  EditExpenseComment,
+  EditExpenseCommentButton,
   EditReceipts,
   ExpenseInfo,
   PaidBy,
@@ -14,7 +14,10 @@ import { RootStackParamList } from './RootStack';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ExpenseDetails'>;
 
-export const ExpenseDetailsScreen: React.FC<Props> = ({ route }) => {
+export const ExpenseDetailsScreen: React.FC<Props> = ({
+  route,
+  navigation,
+}) => {
   const { expenseId } = route.params;
   const { updateExpenseComment, expense, addReceiptPhoto } =
     useExpense(expenseId);
@@ -26,13 +29,20 @@ export const ExpenseDetailsScreen: React.FC<Props> = ({ route }) => {
     [expense, updateExpenseComment]
   );
 
+  const onPressEditComment = useCallback(() => {
+    navigation.navigate('EditTextField', {
+      value: expense.comment,
+      onSubmit: onSubmitComment,
+    });
+  }, [expense.comment, navigation, onSubmitComment]);
+
   return (
     <Layout>
       <ExpenseInfo expense={expense} />
       <PaidBy user={expense.user} />
-      <EditExpenseComment
+      <EditExpenseCommentButton
         comment={expense.comment}
-        updateComment={onSubmitComment}
+        onPress={onPressEditComment}
       />
       <EditReceipts expense={expense} onAddReceiptPhoto={addReceiptPhoto} />
     </Layout>
