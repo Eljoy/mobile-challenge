@@ -58,16 +58,31 @@ fun ReceiptCameraView(
             .fillMaxWidth(),
           horizontalArrangement = Arrangement.SpaceBetween
         ) {
-          Row(verticalAlignment = Alignment.CenterVertically) {
-            Avatar(name = expense.merchant)
-            Column(modifier = Modifier.padding(start = 20.dp, end = 10.dp),
-              verticalArrangement = Arrangement.Center) {
-              Text(text = expense.merchant, fontSize = 15.sp, lineHeight = 16.sp, color = Color.Black)
-              Spacer(modifier = Modifier.height(1.dp))
-              Text(text = expense.formattedDate, fontSize = 13.sp, color = Color.LightGray)
+          Avatar(name = expense.merchant)
+          Column(
+            modifier = Modifier.padding(start = 20.dp, end = 10.dp),
+            verticalArrangement = Arrangement.Center
+          ) {
+            Row(
+              modifier = Modifier.fillMaxWidth(),
+              verticalAlignment = Alignment.CenterVertically,
+              horizontalArrangement = Arrangement.SpaceBetween,
+            ) {
+              Text(
+                text = expense.merchant,
+                fontSize = 15.sp,
+                lineHeight = 16.sp,
+                color = Color.Black
+              )
+              Text(
+                text = expense.amount.value + expense.amount.currency,
+                color = Color.Black,
+                fontSize = 15.sp
+              )
             }
+            Spacer(modifier = Modifier.height(1.dp))
+            Text(text = expense.formattedDate, fontSize = 13.sp, color = Color.LightGray)
           }
-          Text(text = expense.amount.value + expense.amount.currency, color = Color.Black, fontSize = 15.sp)
         }
       }
     }
