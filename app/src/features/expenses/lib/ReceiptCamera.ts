@@ -1,6 +1,6 @@
 import { withPermissions } from '@common';
 import { Expense } from '@models/Expense';
-import { Dimensions, NativeModules } from 'react-native';
+import { Dimensions, NativeModules, Platform } from 'react-native';
 import ImageResizer from 'react-native-image-resizer';
 import { PERMISSIONS } from 'react-native-permissions';
 const { ReceiptCamera } = NativeModules;
@@ -9,9 +9,7 @@ export const makeReceiptPhoto = withPermissions(
   async (expense: Expense): Promise<{ fileName?: string; uri?: string }> => {
     const { width, height } = Dimensions.get('window');
     const result: { fileName?: string; uri?: string } =
-      await ReceiptCamera.makePhoto(
-        JSON.stringify({ formattedDate: '', ...expense })
-      );
+      await ReceiptCamera.makePhoto(JSON.stringify(expense));
     if (result?.uri) {
       const { name, path } = await ImageResizer.createResizedImage(
         result.uri,
@@ -20,7 +18,10 @@ export const makeReceiptPhoto = withPermissions(
         'JPEG',
         100
       );
-      return { fileName: name, uri: path };
+      return {
+        fileName: name,
+        uri: Platform.select({ android: `file:///${path}`, ios: path }),
+      };
     }
     return {};
   },
