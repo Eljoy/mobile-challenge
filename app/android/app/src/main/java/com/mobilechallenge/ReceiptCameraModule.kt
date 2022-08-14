@@ -20,12 +20,19 @@ class ReceiptCameraModule(reactContext: ReactApplicationContext) :
       resultCode: Int,
       intent: Intent?
     ) {
-      if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-        val extras = intent!!.extras
-        val map = WritableNativeMap()
-        map.putString("fileName", extras!!.getString("fileName"))
-        map.putString("uri", extras.getString("uri"))
-        promise?.resolve(map)
+      if (requestCode == REQUEST_CODE) {
+        if (resultCode == RESULT_OK) {
+          val extras = intent!!.extras
+          val map = WritableNativeMap()
+          map.putString("fileName", extras!!.getString("fileName"))
+          map.putString("uri", extras.getString("uri"))
+          promise?.resolve(map)
+        } else {
+          val map = WritableNativeMap()
+          map.putString("fileName", null)
+          map.putString("uri", null)
+          promise?.resolve(map)
+        }
       }
     }
   }
