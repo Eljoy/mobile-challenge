@@ -22,7 +22,6 @@ Api updates are treated in optimistic manner, no loading/error handling is prese
 ```
  cd app
  yarn test
- 
  ````
  
 ## Demo
