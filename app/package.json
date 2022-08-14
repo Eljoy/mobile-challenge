@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "mkenv": "cd ./scripts && sh env.sh ../src/.env",
+    "mkenv": "cd ./scripts && sh env.sh ../.env",
     "postinstall": "npm run mkenv"
   },
   "dependencies": {
