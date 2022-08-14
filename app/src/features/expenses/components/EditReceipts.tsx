@@ -10,26 +10,31 @@ export declare namespace EditReceipts {
   export type Props = {
     expense: Expense;
     onAddReceiptPhoto: (expense: Expense) => void;
+    maxNumberOfReceipts: number;
   };
 }
 
 export const EditReceipts: React.FC<EditReceipts.Props> = React.memo(
-  ({ onAddReceiptPhoto, expense }) => {
+  ({ onAddReceiptPhoto, expense, maxNumberOfReceipts }) => {
     const receipts = useMemo(() => {
       return expense.receipts.map((r) => {
         return (
-          <Layout key={r.url}>
+          <React.Fragment key={r.url}>
             <ReceiptPreview source={{ uri: `${API_URL}${r.url}` }} />
-            <Spacer widthScale={3} />
-          </Layout>
+            <Spacer heightScale={2} widthScale={3} />
+          </React.Fragment>
         );
       });
     }, [expense.receipts]);
+    const reachedMaxNumberOfReceipts =
+      expense.receipts.length === maxNumberOfReceipts;
+
     return (
-      <Layout direction="row" paddingHorizontalScale={3}>
+      <Layout direction="row" align="start start" paddingHorizontalScale={3}>
         {receipts}
-        <Spacer widthScale={3} />
-        <AddReceiptButton onPress={() => onAddReceiptPhoto(expense)} />
+        {!reachedMaxNumberOfReceipts && (
+          <AddReceiptButton onPress={() => onAddReceiptPhoto(expense)} />
+        )}
       </Layout>
     );
   }

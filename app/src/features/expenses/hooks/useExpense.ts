@@ -11,6 +11,7 @@ import {
 
 export const useExpense = (expenseId: Expense['id']) => {
   const dispatch = useDispatch();
+  const maxNumberOfReceipt = 2;
 
   const selectedExpense = useSelector((state: RootState) =>
     expenseSelectors.selectById(state, expenseId)
@@ -45,5 +46,6 @@ export const useExpense = (expenseId: Expense['id']) => {
     updateExpenseComment,
     addReceiptPhoto,
     expense: selectedExpense as Expense,
+    maxNumberOfReceipt,
   };
 };
