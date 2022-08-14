@@ -16,6 +16,21 @@ Api updates are treated in optimistic manner, no loading/error handling is prese
  // .env should be generated. Provide API_URL with running api url
  cd ios pod update && pod install
  ````
+ 
+ ## Tests
+
+```
+ cd app
+ yarn test
+ 
+ ````
+ 
+## Demo
+
+
+
+https://user-images.githubusercontent.com/9527814/184543430-d7883ee1-992b-4bb4-8d03-d7b175eeae70.mp4
+
 
 
 ## Functional requirements
