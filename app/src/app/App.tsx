@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 
 import React from 'react';
 
+import { Colors } from '@design-system/theme';
 import { NavigationContainer } from '@react-navigation/native';
 import { ExpenseDetailsScreen, ExpensesScreen, RootStack } from '@screens';
 import { StatusBar, StyleSheet } from 'react-native';
@@ -33,9 +34,9 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-  header: { backgroundColor: '#EA3768' },
+  header: { backgroundColor: Colors.brand },
   content: {
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
   },
 });
 

@@ -1,4 +1,5 @@
 import { Icon } from '@design-system/components';
+import { Colors } from '@design-system/theme';
 import React from 'react';
 import {
   StyleSheet,
@@ -14,7 +15,7 @@ export declare namespace AddReceiptButton {
 export const AddReceiptButton: React.FC<AddReceiptButton.Props> = (props) => {
   return (
     <TouchableHighlight
-      underlayColor="#30353904"
+      underlayColor={Colors.underlay}
       style={styles.container}
       {...props}
     >

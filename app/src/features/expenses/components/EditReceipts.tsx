@@ -18,19 +18,17 @@ export const EditReceipts: React.FC<EditReceipts.Props> = React.memo(
     const receipts = useMemo(() => {
       return expense.receipts.map((r) => {
         return (
-          <>
-            <ReceiptPreview
-              key={r.url}
-              source={{ uri: `${API_URL}${r.url}` }}
-            />
+          <Layout key={r.url}>
+            <ReceiptPreview source={{ uri: `${API_URL}${r.url}` }} />
             <Spacer widthScale={3} />
-          </>
+          </Layout>
         );
       });
     }, [expense.receipts]);
     return (
       <Layout direction="row" paddingHorizontalScale={3}>
         {receipts}
+        <Spacer widthScale={3} />
         <AddReceiptButton onPress={() => onAddReceiptPhoto(expense)} />
       </Layout>
     );

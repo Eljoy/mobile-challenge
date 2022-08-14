@@ -1,3 +1,4 @@
+import { Colors } from '@design-system/theme';
 import React from 'react';
 import normalize from 'react-native-normalize';
 // @ts-ignore
@@ -23,7 +24,13 @@ export const Avatar: React.FC<Avatar.Props> = (props) => {
     <UserAvatar
       {...props}
       size={normalize(45)}
-      bgColors={['#EA4B50', '#62D387', '#5CC5F2', '#5FDD87']}
+      bgColors={[
+        Colors.blue,
+        Colors.green,
+        Colors.red,
+        Colors.purple,
+        Colors.lightGreen,
+      ]}
     />
   );
 };

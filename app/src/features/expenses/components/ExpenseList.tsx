@@ -1,5 +1,6 @@
 import { Avatar, Spacer } from '@design-system/components';
 import { Layout } from '@design-system/layout';
+import { Colors } from '@design-system/theme';
 import { Font, FontColor, Text } from '@design-system/typography';
 import { groupByDate } from '@features/expenses/lib/groupByDate';
 import { Expense } from '@models/Expense';
@@ -34,7 +35,7 @@ const ListItem: React.FC<{
 }> = memo(({ expense, onListItemPressed }) => {
   return (
     <TouchableHighlight
-      underlayColor="#30353904"
+      underlayColor={Colors.underlay}
       onPress={() => {
         onListItemPressed(expense);
       }}
@@ -69,9 +70,13 @@ export const ExpenseList: React.FC<ExpenseList.Props> = React.memo(
     const renderItem = useCallback(
       (info: ListRenderItemInfo<Expense | string>) =>
         typeof info.item === 'string' ? (
-          <ListSection date={info.item} />
+          <ListSection key={info.item} date={info.item} />
         ) : (
-          <ListItem expense={info.item} onListItemPressed={onExpensePressed} />
+          <ListItem
+            key={info.item.id}
+            expense={info.item}
+            onListItemPressed={onExpensePressed}
+          />
         ),
       [onExpensePressed]
     );
