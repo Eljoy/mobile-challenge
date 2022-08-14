@@ -3,6 +3,21 @@ Implement an expenses list fetching all expenses from the provided API. Allow th
 
 See the [API details](https://github.com/pleo-io/mobile-challenge/tree/master/api) for implementation.
 
+## About
+
+For native screens I've decided to go with camera screens using swiftUI and JetpackCompose. \
+Api updates are treated in optimistic manner, no loading/error handling is presented. 
+
+## Setup
+
+```
+ cd app
+ yarn install
+ // .env should be generated. Provide API_URL with running api url
+ cd ios pod update && pod install
+ ````
+
+
 ## Functional requirements
 - User can list expenses
 - User can add a comment on an expense
